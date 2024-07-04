@@ -1,0 +1,39 @@
+<swiper-container class="sm:block px-[15px] lg:px-[125px] lg:pr-[650px] py-4 bg-lightgray" init="false"
+  #swiperNav>
+
+  <swiper-slide class="w-auto">
+    <a class="mr-4 w-fit text-grey text-action1" [routerLink]="urlConst.FIXTURES.BASE">
+      Upcoming Matches
+    </a>
+  </swiper-slide>
+
+
+  <swiper-slide class="w-auto">
+    <a class="mr-4 w-fit text-grey text-action1" [routerLink]="urlConst.LEAGUES.BASE">
+      Leagues
+    </a>
+  </swiper-slide>
+
+  <swiper-slide class="w-auto">
+    <a class="mr-4 w-fit text-grey text-action1" nz-popover nzPopoverPlacement="bottomLeft"
+      [nzPopoverContent]="daoTaoTpl" nzPopoverTrigger="hover" nzPopoverOverlayClassName="navbar"
+      [routerLink]="urlConst.FIXTURES.BASE">
+      Matches <i class="fa-solid fa-angle-down ml-1"></i>
+    </a>
+  </swiper-slide>
+
+</swiper-container>
+
+<ng-template #daoTaoTpl>
+  <div class="nav-items">
+    <a class="px-3 py-3 text-grey4 flex justify-between items-center">
+      <span>Premier League</span>
+      <i class="fa-solid fa-angle-right ml-5x4"></i>
+    </a>
+    <a class="px-3 py-3 text-grey4 flex justify-between items-center">
+      <span>Laliga</span>
+      <i class="fa-solid fa-angle-right ml-5x4"></i>
+    </a>
+
+  </div>
+</ng-template>

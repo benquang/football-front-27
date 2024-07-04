@@ -1,0 +1,11 @@
+<div class="mx-[-50px]">
+  <app-banner-intro [imgSrc]="image" [title]="title"></app-banner-intro>
+</div>
+<div class="py-5x2">
+  <app-breadcrumb-home [breadcrumb]="breadcrumbObj"></app-breadcrumb-home>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-8 mt-10 mb-[105px]">
+  <div class="w-[426px] h-auto rounded-2xl" *ngFor="let data of datas">
+    <app-card-image [data]="data"></app-card-image>
+  </div>
+</div>

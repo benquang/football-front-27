@@ -1,0 +1,21 @@
+<div class="cd-container">
+  <div class="text-grey4 font-light justify-start items-center gap-1 inline-flex mb-5x1">
+    <i class="fa-regular fa-calendar-days mr-5x1"></i>
+    <span class="font-thin">
+      {{chiTiet.ngayDang| date: 'HH:mm'}} {{chiTiet.ngayDang| date:'dd/MM/yyyy'}}</span>
+  </div>
+  <div class="text-blue3 text-title3 font-bold">{{chiTiet.tieuDe}}</div>
+  <img class="w-full mt-6 mb-9" src={{chiTiet.anhBia}} />
+  <div class="content-container w-full text-justify" [innerHTML]='chiTiet.noiDung'></div>
+</div>
+<div class="w-full my-12 py-6 border-t-2 border-0 border-grey5 border-solid">
+  <span class="text-grey1 text-metadata2 font-medium mr-6 ">
+    {{shareTitle}}
+  </span>
+  <div class="justify-start items-start gap-4 inline-flex text-grey3">
+    <span><i class="fa-solid fa-envelope text-action1 cursor-pointer"></i></span>
+    <span><i class="fa-brands fa-twitter text-action1 cursor-pointer"></i></span>
+    <span><i class="fa-brands fa-linkedin-in text-action1 cursor-pointer"></i></span>
+    <span><i class="fa-brands fa-facebook-f text-action1 cursor-pointer"></i></span>
+  </div>
+</div>

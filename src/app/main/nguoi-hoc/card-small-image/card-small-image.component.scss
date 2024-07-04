@@ -1,0 +1,9 @@
+.card-small-container {
+  @apply w-full shadow-1x hover:shadow-2x justify-start items-center gap-6 inline-flex pl-5x4 pr-5x6 py-5x3 mb-5x4 rounded-xl border-2 border-solid border-grey4 bg-white box-border cursor-pointer transition;
+}
+.card-small-container span {
+  @apply text-blue1 text-title4 max-lg:text-subtitle font-bold w-full;
+}
+.card-small-container img {
+  @apply w-44 max-xl:w-32 max-lg:w-24 h-full;
+}

@@ -1,0 +1,72 @@
+<div nz-row [nzGutter]="{ xs: 5, sm: 10, md: 15, lg: 20 }" (click)="showModal()"
+  class="activity-photos">
+  <div nz-col nzSpan="24" nzLg="12">
+    <div nz-row>
+      <div nz-col nzSpan="24" class="cursor-pointer xs:mb-5 md:mb-0">
+        <img [src]='activityPhotos[0]' class="w-full"
+          onerror="this.src='assets/img/bg/default-cover.jpg'">
+      </div>
+    </div>
+    <div nz-row [nzGutter]="{ xs: 5, sm: 10, md: 15, lg: 20 }"
+      class="lg:mt-5x4 md:mt-5x3 xs:mb-5 lg:mb-0 mt-5x1">
+      <div nz-col nzXs="24" nzSm="24" nzMd="12" class="cursor-pointer">
+        <img [src]="activityPhotos[1]" class="w-full"
+          onerror="this.src='assets/img/bg/default-cover.jpg'">
+      </div>
+      <div nz-col nzXs="0" nzSm="0" nzMd="12" class="cursor-pointer">
+        <img [src]="activityPhotos[2]" class="w-full"
+          onerror="this.src='assets/img/bg/default-cover.jpg'">
+      </div>
+    </div>
+  </div>
+  <div nz-col nzSpan="24" nzLg="12">
+    <div nz-row [nzGutter]="{ xs: 5, sm: 10, md: 15, lg: 20 }">
+      <div nz-col nzXs="24" nzSm="24" nzMd="12" class="cursor-pointer xs:mb-5 md:mb-0">
+        <img [src]="activityPhotos[3]" class="w-full"
+          onerror="this.src='assets/img/bg/default-cover.jpg'">
+      </div>
+      <div nz-col nzXs="0" nzSm="0" nzMd="12" class="cursor-pointer">
+        <img [src]="activityPhotos[4]" class="w-full"
+          onerror="this.src='assets/img/bg/default-cover.jpg'">
+      </div>
+    </div>
+    <div nz-row class="lg:mt-5x4 md:mt-5x3 xs:mb-5 lg:mb-0 mt-5x1">
+      <div nz-col nzSpan="24" class="cursor-pointer">
+        <img [src]="activityPhotos[5]" class="w-full"
+          onerror="this.src='assets/img/bg/default-cover.jpg'">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div [class.hidden]="!isVisible"
+  class="fixed inset-0 flex items-center justify-center z-20 w-full h-full">
+  <div class="modal-overlay fixed inset-0 bg-black opacity-70 cursor-pointer" (click)="hideModal()">
+  </div>
+  <div
+    class="modal-container bg-transparent max-w-[978px] w-full h-auto m-auto rounded-lg shadow-lg p-4 z-50 animate-fade-in">
+    <swiper-container init="false" #swiper thumbs-swiper=".my-thumbs"
+      class="w-full h-full mb-5x2 cursor-pointer">
+      <swiper-slide *ngIf="!activityPhotos.length">
+        <img src="assets/img/bg/default-cover.jpg"
+          onerror="this.src='assets/img/bg/default-cover.jpg'" class="object-cover">
+      </swiper-slide>
+      <swiper-slide *ngFor="let img of activityPhotos" navigation="true">
+        <img [src]="img" onerror="this.src='assets/img/bg/default-cover.jpg'" class="h-auto">
+      </swiper-slide>
+    </swiper-container>
+    <swiper-container #miniSwiper class="my-thumbs mini-swiper" space-between="10" free-mode="true"
+      watch-slides-progress="true">
+      <swiper-slide *ngIf="!activityPhotos.length">
+        <img src="assets/img/bg/default-cover.jpg"
+          onerror="this.src='assets/img/bg/default-cover.jpg'" class="object-cover">
+      </swiper-slide>
+      <swiper-slide *ngFor="let img of activityPhotos; let i = index"
+        class="cursor-pointer border-transparent border-solid border hover:border-white opacity-80"
+        [ngClass]="{'border-white': i === activeSlideIndex}">
+        <img [src]="img" class="object-cover h-[98px]"
+          onerror="this.src='assets/img/bg/default-cover.jpg'">
+      </swiper-slide>
+    </swiper-container>
+  </div>
+</div>

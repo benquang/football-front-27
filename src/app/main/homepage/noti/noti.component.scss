@@ -1,0 +1,6 @@
+.tag {
+  @apply w-fit bg-blue3 text-white text-metadata2 rounded text-center px-2 py-1;
+}
+.noti-title {
+  @apply mb-1 overflow-ellipsis h-[52px] overflow-hidden text-justify;
+}

@@ -1,0 +1,15 @@
+.row {
+  @apply w-full py-5 text-grey9;
+}
+.card-row {
+  @apply w-full mb-5x2 p-5x3 rounded-2xl transition-colors duration-500 hover:bg-grey9 hover:text-blue3;
+}
+.card p {
+  @apply w-full lg:h-28 overflow-hidden text-justify mb-5x1 text-title4 md:text-subtitle lg:text-title4;
+}
+button {
+  @apply h-8 transition-colors duration-500 bg-grey9 text-blue3 font-medium border-white rounded-md;
+}
+.card-row:hover .card button {
+  @apply text-grey9 bg-blue3;
+}

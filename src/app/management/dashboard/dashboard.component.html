@@ -1,0 +1,33 @@
+<app-breadcrumb [breadcrumb]="breadcrumbObj"></app-breadcrumb>
+<div nz-row>
+  <div nz-col nzSpan="12">
+    <span class="text-1xl font-bold uppercase">{{breadcrumbObj.heading}}</span>
+  </div>
+  <div nz-col nzSpan="12" class="text-right">
+    <button nz-button class="nz-btn-green"><i class="fa-solid fa-plus mr-5x1"></i>Thêm mới</button>
+  </div>
+</div>
+<hr>
+
+Upload single file:<br>
+
+<app-upload-file class="w-full" [subFolderOnServer]="'test-ma-duyet-de-tai'" [isUploadMultiFile]="false"
+  [isDisableUpload]="false" [isDisableView]="false" [isDownloadable]="true"
+  [listFilesPatch]="extractFileFromListId([exampleForm.get('fieldOneFile')?.value].flat())"
+  (returnedListId)="setIdFileToForm($event, 'fieldOneFile', exampleForm)">
+</app-upload-file>
+
+<br><br><br>
+
+Upload multi file:<br>
+<app-upload-file class="w-full" [subFolderOnServer]="'test-ma-duyet-de-tai'" [isUploadMultiFile]="true"
+  [isDisableView]="false" [listFilesPatch]="extractFileFromListId([exampleForm.get('fieldMultiFile')?.value].flat())"
+  (returnedListId)="setListIdFileToForm($event, 'fieldMultiFile', exampleForm)">
+</app-upload-file>
+
+<button type="button" (click)="viewFormValue()">View form value</button>
+
+<br><br><br>
+
+CKEditor:
+<ckeditor [config]="cfgEditor" [editor]="editor" [(ngModel)]="ckeData"></ckeditor>

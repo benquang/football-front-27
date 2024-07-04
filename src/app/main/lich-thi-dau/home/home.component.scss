@@ -1,0 +1,265 @@
+.list-container {
+  @apply w-full justify-evenly items-start gap-5 flex flex-wrap mt-4;
+}
+.card-container {
+  @apply border flex-row justify-start items-center gap-4 flex p-4 rounded-lg border-gray-dark border-solid lg:flex-[0_0_calc(50%-10px)] bg-white;
+}
+.card-image-container {
+  @apply w-32 aspect-square flex justify-center relative;
+}
+.card-image-container img {
+  @apply absolute max-w-full max-h-full m-auto inset-0;
+}
+.card-content-container {
+  @apply w-full flex-col justify-start items-start gap-2.5 inline-flex;
+}
+.card-container button {
+  @apply rounded flex-col justify-center items-center gap-2.5 inline-flex px-2 py-3 border border-solid border-blue4 hover:bg-blue4 bg-white ease-in-out transition-colors cursor-pointer;
+}
+.card-container button span {
+  @apply text-blue4 text-metadata2 font-medium uppercase mx-11 ease-in-out transition-colors;
+}
+.card-container button:hover span {
+  @apply text-white ease-in-out transition-colors;
+}
+
+
+.khung {
+  border: 0.5px solid #E5E5E5;
+  border-radius: 4px;
+}
+.ngay {
+  width: 100%;
+  text-align: center;
+
+  font-size: 16px;
+  color: #222222;
+  font-weight: 700;
+}
+.vong {
+  width: 100%;
+  text-align: center;
+
+  font-size: 14px;
+  color: #222222;
+  font-weight: 400;
+}
+
+.khungtrong {
+  border: 0.5px solid #E5E5E5;
+  border-radius: 8px;
+
+}
+
+.icongiaidau {
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.doitrai {
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+.ogiua {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.doiphai {
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.tendoi {
+  display: inline-block;
+  margin-bottom: 0px;
+
+  font-size: 14px;
+  color: #4F4F4F;
+  font-weight: 400;
+}
+.kickoff {
+  display: inline-block;
+  margin-bottom: 0px;
+
+  font-size: 16px;
+  color: #4F4F4F;
+  font-weight: 600;
+}
+
+.muiten {
+
+  font-size: 30px;
+  color: #4F4F4F;
+  font-weight: 300;
+
+  text-align: right;
+}
+
+
+
+/* */
+.more {
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: bold;
+}
+
+.tintuc {
+  border-top: 1px solid #9f224e;
+}
+.tintuc1 {
+  border-top: 0.5px solid #E5E5E5;
+}
+.anhtintuc {
+  width: 100%;
+  max-height: 80px;
+}
+.tieudetintuc {
+  height: fit-content;
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+
+  font-size: 14px;
+  line-height: 160%;
+  font-weight: 500;
+
+  padding-left: 10px;
+}
+
+.khungbxh {
+  width: 100%;
+  border: 0.5px solid #E5E5E5;
+  border-radius: 8px;
+}
+
+.tieudebxh {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 8px 8px 0 0;
+}
+.tenbxh {
+  font-size: 20px;
+  font-weight: 700;
+
+  color: #FFFFFF;
+}
+
+.tencotbxh {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  background-color: #FAFAFA;
+}
+
+.hangbxh {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+.stt {
+  color: #9F9F9F;
+  font-size: 14px;
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: white;
+  color: #9f9f9f;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  border: 0.5px solid #E5E5E5;
+  border-radius: 4px;
+  font-size: 16px;
+
+  min-width: 230px;
+
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  color: #3155A6;
+  border: 0.5px solid #3155A6;
+  border-radius: 4px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  /*background-color: #f1f1f1;*/
+  min-width: 230px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+
+  max-height: 200px; 
+  overflow-y: auto; 
+
+
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #9f9f9f;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+
+  border: 0.5px solid #E5E5E5;
+  border-radius: 4px;
+
+  font-size: 16px;
+
+  background-color: white;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+/*.dropdown:hover .dropdown-content {display: block;}*/
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+/*.dropdown:hover .dropbtn {background-color: #3e8e41;}*/

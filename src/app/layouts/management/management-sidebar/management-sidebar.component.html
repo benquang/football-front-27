@@ -1,0 +1,32 @@
+<div class="logo text-white text-center logo-text-font logo-front">
+  <img alt="HCMUTE Logo" class="logo-img" src="assets/img/logo/ute-logo-white.png"><b>HCMUTE</b>
+  <div class="avatar-user">
+    <img alt="User Avatar" class="avatar-img" [src]="avatarOfUser"
+      onerror="this.src='assets/img/other/user.png'"><br>
+    <span class="avatar-name">{{nameOfUser}}</span>
+  </div>
+</div>
+<ul nz-menu nzTheme="light" nzMode="inline" class="sub-menu">
+  <ng-container *ngFor="let menu of listMenu">
+    <li nz-submenu *ngIf="menu.isHaveChild && checkRole(menu.roles)" [nzTitle]="menu.title"
+      [nzIcon]="menu.icon" (click)="autoHideMenu()" #subMenuItem>
+      <ul>
+        <ng-container *ngFor="let subMenu of menu.listChild">
+          <li nz-menu-item *ngIf="checkRole(subMenu.roles)" [routerLink]="subMenu.routerLink"
+            routerLinkActive="ant-menu-item-selected" nzTooltipPlacement="right" nz-tooltip
+            [nzTooltipTitle]="subMenu.title">
+            <i [ngClass]="'mr-5x2 ' + subMenu.icon"></i>
+            <span>{{subMenu.title}}</span>
+          </li>
+        </ng-container>
+      </ul>
+    </li>
+    <li nz-menu-item class="menu-alone" *ngIf="!menu.isHaveChild && checkRole(menu.roles)"
+      [routerLink]="menu.routerLink" routerLinkActive="ant-menu-item-selected"
+      nzTooltipPlacement="right" nz-tooltip [nzTooltipTitle]="menu.title">
+      <i [ngClass]="'mr-5x1 ' + menu.icon"></i>
+      <span>{{menu.title}}</span>
+    </li>
+  </ng-container>
+
+</ul>

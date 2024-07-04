@@ -1,0 +1,90 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "paths": {
+      "@constants/*": [
+        "src/app/core/constants/*"
+      ],
+      "@guards/*": [
+        "src/app/core/guards/*"
+      ],
+      "@interceptors/*": [
+        "src/app/core/interceptors/*"
+      ],
+      "@models/*": [
+        "src/app/core/models/*"
+      ],
+      "@services/*": [
+        "src/app/core/services/*"
+      ],
+      "@validators/*": [
+        "src/app/core/validators/*"
+      ],
+      "@layouts/*": [
+        "src/app/layouts/*"
+      ],
+      "@component-shared/*": [
+        "src/app/shared/component-shared/*"
+      ],
+      "@widget/*": [
+        "src/app/shared/widget/*"
+      ],
+      "@languages/*": [
+        "src/assets/languages/*"
+      ],
+      "@environment": [
+        "src/environments/environment.ts"
+      ],
+      "@auth/*": [
+        "src/app/auth/*"
+      ],
+      "@main/*": [
+        "src/app/main/*"
+      ],
+      "@management/*": [
+        "src/app/management/*"
+      ]
+    },
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "es2020",
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "useDefineForClassFields": false
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictTemplates": true,
+    "strictInjectionParameters": true,
+    "fullTemplateTypeCheck": true,
+    "strictInputAccessModifiers": true
+  },
+  "exclude": [
+    ".git",
+    "dist",
+    "dist*",
+    "node_modules",
+    "**/dist/*",
+    "**/node_modules/*",
+  ]
+}

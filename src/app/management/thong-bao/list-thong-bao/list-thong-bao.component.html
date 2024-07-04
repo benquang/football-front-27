@@ -1,0 +1,62 @@
+<app-breadcrumb [breadcrumb]="breadcrumbObj"></app-breadcrumb>
+<div nz-row nzGutter="16">
+  <div nz-col nzSpan="8">
+    <span class="text-1xl font-bold uppercase">{{breadcrumbObj.heading}}</span>
+  </div>
+  <div nz-col nzSpan="16" class="text-right">
+    <nz-input-group nzSearch [nzAddOnAfter]="searchIcon" class="w-full max-w-[200px] mr-5x1">
+      <input type="text" nz-input [placeholder]="langData.TIM_KIEM" [(ngModel)]="searchValue"
+        (keyup.enter)="getDataPaging(true)" />
+      <ng-template #searchIcon>
+        <button nz-button nzType="primary" nzSearch (click)="getDataPaging(true)">
+          <i class="fa-solid fa-search"></i></button>
+      </ng-template>
+    </nz-input-group>
+    <button nz-button class="nz-btn-green" (click)="openModal(formModal)">
+      <i class="fa-solid fa-plus mr-5x1"></i>{{langData.THEM_MOI}}</button>
+  </div>
+</div>
+<hr>
+<nz-table class="table-border table-cell-middle table-margin-bot" nzSize="middle"
+  nzShowPagination="false" [nzData]="listThongBao.data" [nzScroll]="{x: '500px'}">
+  <thead>
+    <tr>
+      <th nzAlign="center" nzWidth="50px">{{langData.SO_THU_TU}}</th>
+      <th nzAlign="center" nzWidth="150px">{{langData.LOAI_THONG_BAO}}</th>
+      <th nzAlign="center" nzWidth="100px">{{langData.TIEU_DE}}</th>
+      <th nzAlign="center" nzWidth="100px">{{langData.TRANG_THAI}}</th>
+      <th nzAlign="center" nzWidth="100px"><i class="fa-solid fa-cog"></i></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of listThongBao.data; let i = index; trackBy: trackByFn">
+      <td nzAlign="center">
+        {{ i + 1 + (listThongBao.currentPage-1) * listThongBao.limit}}
+      </td>
+      <td nzAlign="center">
+        {{item.loaiThongBaoId}}
+        <!-- Note: tương lai khi có API thì chỗ này show loại thông báo chứ không phải ID -->
+      </td>
+      <td nzAlign="left">
+        {{item.tieuDe}}
+      </td>
+      <td nzAlign="center">
+        <nz-switch class="switcher-on-green switcher-off-red" [(ngModel)]="item.trangThai"
+          [nzLoading]="selectedSwitcherId === item.id" [nzControl]="true"
+          (click)="changeStatus(item.id)" nzCheckedChildren="ON"
+          nzUnCheckedChildren="OFF"></nz-switch>
+      </td>
+      <td nzAlign="center">
+        <button nz-button nzType="primary" type="button" nzSize="small"
+          (click)="openModal(formModal, item)"><i class="fa-solid fa-edit"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+<app-table-paginate [pageConfig]="listThongBao"
+  (pageChange)="pageChange($event)"></app-table-paginate>
+
+<ng-template #formModal>
+  <app-form-thong-bao [modalData]="modalData"
+    (closeModal)="closeModal($event)"></app-form-thong-bao>
+</ng-template>

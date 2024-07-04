@@ -1,0 +1,492 @@
+<div class="py-5x2">
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <app-breadcrumb-home [breadcrumb]="breadcrumbObj"></app-breadcrumb-home>
+    </div>
+  </div>
+
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <div class="list-container">
+
+        <div *ngFor="let item of data.matchs_infos" class="card-content-container">
+          <span class="text-lightblack-dark text-subtitle font-medium">{{item.home_team}} vs
+            {{item.away_team}} - {{item.match_week}} - Season
+            {{item.season}}</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div nz-row>
+    <div nz-col nzSpan="24">
+
+      <div class="list-container">
+
+        <div class="card-container">
+
+          <div class="card-content-container">
+
+            <span *ngFor="let item of data.matchs_infos"
+              class="text-blue2 text-title3 font-bold w-full text-center">{{item.venue_time.split('
+              ').slice(0, 1) + ' ' + item.match_date}}</span>
+
+            <div class="card-container w-full">
+              <div class="card-content-container w-full">
+                <div nz-row class="w-full">
+
+                  <div nz-col nzSpan="5">
+                  </div>
+
+                  <div nz-col nzSpan="14">
+
+                    <div nz-row class="w-full items-center mt-10">
+
+                      <div *ngFor="let item of data.matchs_infos" nz-col nzSpan="10"
+                        class="text-right">
+                        <span class="text-grey3 text-action1 font-light">{{item.home_team}}</span>
+                        <img [src]="returnImage(item.home_team)" class="h-20 ml-10">
+                      </div>
+
+                      <div *ngFor="let item of data.matchs_infos" nz-col nzSpan="4"
+                        class="text-center">
+                        <span class="text-black text-4xl font-bold">{{item.venue_time.split('
+                          ').slice(4, 5).join(' ')}}</span>
+                      </div>
+
+                      <div *ngFor="let item of data.matchs_infos" nz-col nzSpan="10">
+                        <img [src]="returnImage(item.away_team)" class="h-20 mr-10">
+                        <span class="text-grey3 text-action1 font-light">{{item.away_team}}</span>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div nz-col nzSpan="5" class="w-full text-right">
+
+                  </div>
+                </div>
+
+                <div nz-row class="w-full">
+                  <div nz-col nzSpan="5" class="w-full">
+                  </div>
+                  <div nz-col nzSpan="14" class="w-full">
+
+                    <div nz-row class="w-full items-center mt-5">
+                      <div nz-col nzSpan="24" class="text-center">
+                        <span class="text-grey3 text-action1 font-bold">Last 2 games Average
+                          statistics</span>
+                      </div>
+                    </div>
+
+                    <div *ngFor="let item of data.matchs_model" nz-row
+                      class="w-full items-center mt-2">
+                      <div nz-col nzSpan="10" class="text-right">
+                        <span class="text-grey3 text-action1 font-bold">Possesion: </span>
+                        <span
+                          class="text-grey3 text-action1 font-light">{{item.home_possession}}%</span>
+                      </div>
+                      <div nz-col nzSpan="4">
+
+                      </div>
+                      <div nz-col nzSpan="10" class="text-left">
+                        <span class="text-grey3 text-action1 font-bold">Possesion: </span>
+                        <span
+                          class="text-grey3 text-action1 font-light">{{item.away_possession}}%</span>
+                      </div>
+                    </div>
+
+                    <div nz-row class="w-full items-center mt-2">
+                      <div nz-col nzSpan="10">
+                        <div class="duongvien w-full"></div>
+                      </div>
+                      <div nz-col nzSpan="4">
+
+                      </div>
+                      <div nz-col nzSpan="10">
+                        <div class="duongvien w-full"></div>
+                      </div>
+                    </div>
+
+                    <div *ngFor="let item of data.matchs_model" nz-row
+                      class="w-full items-center mt-2">
+                      <div nz-col nzSpan="10" class="text-right">
+                        <span class="text-grey3 text-action1 font-bold">Shot: </span>
+                        <span class="text-grey3 text-action1 font-light">{{item.home_sh}}</span>
+                      </div>
+                      <div nz-col nzSpan="4">
+
+                      </div>
+                      <div nz-col nzSpan="10" class="text-left">
+                        <span class="text-grey3 text-action1 font-bold">Shot: </span>
+                        <span class="text-grey3 text-action1 font-light">{{item.away_sh}}</span>
+                      </div>
+                    </div>
+
+                    <div nz-row class="w-full items-center mt-2">
+                      <div nz-col nzSpan="10">
+                        <div class="duongvien w-full"></div>
+                      </div>
+                      <div nz-col nzSpan="4">
+
+                      </div>
+                      <div nz-col nzSpan="10">
+                        <div class="duongvien w-full"></div>
+                      </div>
+                    </div>
+
+
+
+                    <div *ngFor="let item of data.matchs_model" nz-row
+                      class="w-full items-center mt-2">
+                      <div nz-col nzSpan="10" class="text-right">
+                        <span class="text-grey3 text-action1 font-bold">Pass: </span>
+                        <span
+                          class="text-grey3 text-action1 font-light">{{item.home_att_passes}}</span>
+                      </div>
+                      <div nz-col nzSpan="4">
+
+                      </div>
+                      <div nz-col nzSpan="10" class="text-left">
+                        <span class="text-grey3 text-action1 font-bold">Pass: </span>
+                        <span
+                          class="text-grey3 text-action1 font-light">{{item.away_att_passes}}</span>
+                      </div>
+                    </div>
+
+                    <div nz-row class="w-full items-center mt-2">
+                      <div nz-col nzSpan="10">
+                        <div class="duongvien w-full"></div>
+                      </div>
+                      <div nz-col nzSpan="4">
+
+                      </div>
+                      <div nz-col nzSpan="10">
+                        <div class="duongvien w-full"></div>
+                      </div>
+                    </div>
+
+                    <div nz-row class="w-full items-center mt-5">
+                      <div nz-col nzSpan="24" class="text-center">
+                        <span class="text-grey3 text-action1 font-bold">Team Strength</span>
+                      </div>
+                    </div>
+
+                    <div *ngFor="let item of data.matchs_model" nz-row
+                      class="w-full items-center mt-2">
+                      <div nz-col nzSpan="10" class="text-right">
+                        <span class="text-grey3 text-action1 font-bold">Attacking: </span>
+                        <span
+                          class="text-grey3 text-action1 font-light">{{item.home_attack.toFixed(2)}}</span>
+                      </div>
+                      <div nz-col nzSpan="4">
+
+                      </div>
+                      <div nz-col nzSpan="10" class="text-left">
+                        <span class="text-grey3 text-action1 font-bold">Attacking: </span>
+                        <span
+                          class="text-grey3 text-action1 font-light">{{item.away_attack.toFixed(2)}}</span>
+                      </div>
+                    </div>
+
+                    <div nz-row class="w-full items-center mt-2">
+                      <div nz-col nzSpan="10">
+                        <div class="duongvien w-full"></div>
+                      </div>
+                      <div nz-col nzSpan="4">
+
+                      </div>
+                      <div nz-col nzSpan="10">
+                        <div class="duongvien w-full"></div>
+                      </div>
+                    </div>
+
+
+                    <div *ngFor="let item of data.matchs_model" nz-row
+                      class="w-full items-center mt-2">
+                      <div nz-col nzSpan="10" class="text-right">
+                        <span class="text-grey3 text-action1 font-bold">Midfield: </span>
+                        <span
+                          class="text-grey3 text-action1 font-light">{{item.home_midfield.toFixed(2)}}</span>
+                      </div>
+                      <div nz-col nzSpan="4">
+
+                      </div>
+                      <div nz-col nzSpan="10" class="text-left">
+                        <span class="text-grey3 text-action1 font-bold">Midfield: </span>
+                        <span
+                          class="text-grey3 text-action1 font-light">{{item.away_midfield.toFixed(2)}}</span>
+                      </div>
+                    </div>
+
+                    <div nz-row class="w-full items-center mt-2">
+                      <div nz-col nzSpan="10">
+                        <div class="duongvien w-full"></div>
+                      </div>
+                      <div nz-col nzSpan="4">
+
+                      </div>
+                      <div nz-col nzSpan="10">
+                        <div class="duongvien w-full"></div>
+                      </div>
+                    </div>
+
+
+                    <div *ngFor="let item of data.matchs_model" nz-row
+                      class="w-full items-center mt-2">
+                      <div nz-col nzSpan="10" class="text-right">
+                        <span class="text-grey3 text-action1 font-bold">Defending: </span>
+                        <span
+                          class="text-grey3 text-action1 font-light">{{item.home_defense.toFixed(2)}}</span>
+                      </div>
+                      <div nz-col nzSpan="4">
+
+                      </div>
+                      <div nz-col nzSpan="10" class="text-left">
+                        <span class="text-grey3 text-action1 font-bold">Pass: </span>
+                        <span
+                          class="text-grey3 text-action1 font-light">{{item.away_defense.toFixed(2)}}</span>
+                      </div>
+                    </div>
+
+                    <div nz-row class="w-full items-center mt-2">
+                      <div nz-col nzSpan="10" class="text-right">
+                        ...
+                      </div>
+                      <div nz-col nzSpan="4">
+
+                      </div>
+                      <div nz-col nzSpan="10" class="text-left">
+                        ...
+                      </div>
+                    </div>
+
+                    <div nz-row class="w-full items-center mt-5">
+                      <div nz-col nzSpan="24" class="text-center">
+                        <span class="text-grey3 text-action1 font-light">Last Matches</span>
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <div nz-col nzSpan="5" class="w-full">
+                  </div>
+                </div>
+
+                <div nz-row class="w-full items-center">
+
+                  <div nz-col nzSpan="12">
+
+                    <a *ngFor="let item of data.all_model_1" [href]="returnLinkMatch(item.match_id)"
+                      class="w-full">
+                      <div nz-row class="w-full items-center mb-5">
+                        <div nz-col nzSpan="24">
+                          <div class="card-container mr-2">
+                            <div class="card-content-container">
+
+                              <div nz-row class="w-full items-center">
+                                <div nz-col nzSpan="10">
+                                  <img [src]="returnImage(item.home_team)" class="h-10 mr-5">
+                                  <span
+                                    class="text-grey3 text-action1 font-light">{{item.home_team}}</span>
+                                </div>
+                                <div nz-col nzSpan="4" class="text-center">
+                                  <span
+                                    class="text-grey3 text-action1 font-bold">{{item.home_score}} -
+                                    {{item.away_score}}</span>
+
+                                </div>
+                                <div nz-col nzSpan="10" class="text-right">
+                                  <span
+                                    class="text-grey3 text-action1 font-light">{{item.away_team}}</span>
+                                  <img [src]="returnImage(item.away_team)" class="h-10 ml-5">
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+
+                  </div>
+
+                  <div nz-col nzSpan="12">
+
+                    <a *ngFor="let item of data.all_model_2" [href]="returnLinkMatch(item.match_id)"
+                      class="w-full">
+                      <div nz-row class="w-full items-center mb-5">
+                        <div nz-col nzSpan="24">
+                          <div class="card-container mr-2">
+                            <div class="card-content-container">
+
+                              <div nz-row class="w-full items-center">
+                                <div nz-col nzSpan="10">
+                                  <img [src]="returnImage(item.home_team)" class="h-10 mr-5">
+                                  <span
+                                    class="text-grey3 text-action1 font-light">{{item.home_team}}</span>
+                                </div>
+                                <div nz-col nzSpan="4" class="text-center">
+                                  <span
+                                    class="text-grey3 text-action1 font-bold">{{item.home_score}} -
+                                    {{item.away_score}}</span>
+
+                                </div>
+                                <div nz-col nzSpan="10" class="text-right">
+                                  <span
+                                    class="text-grey3 text-action1 font-light">{{item.away_team}}</span>
+                                  <img [src]="returnImage(item.away_team)" class="h-10 ml-5">
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+
+                  </div>
+
+
+
+                </div>
+
+                <div class="w-full text-center mt-20">
+                  <span class="text-grey3 text-title3 font-bold w-full">Our Outcome Result
+                    Predicting</span>
+                </div>
+                <div *ngFor="let item of data.match_future" class="w-full text-center">
+                  <div *ngIf="item.result === 'Win' ">
+                    <span class="text-grey3 text-title3 font-light w-full mr-3">{{item.home_team}}
+                      -</span>
+                    <span class="text-blue2 text-title3 font-light w-full">{{item.result}}</span>
+                  </div>
+                  <div *ngIf="item.result === 'Lose' ">
+                    <span class="text-grey3 text-title3 font-light w-full mr-3">{{item.home_team}}
+                      -</span>
+                    <span class="text-blue2 text-title3 font-light w-full">Lose</span>
+                  </div>
+                  <div *ngIf="item.result === 'Draw' ">
+                    <span class="text-grey3 text-title3 font-light w-full mr-3">{{item.home_team}}
+                      -</span>
+                    <span class="text-blue2 text-title3 font-light w-full">Draw</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="w-full text-center mt-20">
+              <span class="text-grey3 text-title3 font-bold w-full">Formation Optimization</span>
+            </div>
+
+
+            <div nz-row class="w-full items-center">
+              <div nz-col nzSpan="12">
+
+                <div nz-row class="w-full items-center pb-2">
+                  <div nz-col nzSpan="24" class="text-center">
+                    <span class="text-grey3 text-action1 font-bold">{{this.home_team}}</span>
+                  </div>
+
+                </div>
+
+                <div nz-row class="w-full items-center pr-2">
+                  <div nz-col nzSpan="24">
+                    <nz-table class="table-border table-cell-middle w-full" nzSize="middle">
+                      <thead>
+                        <tr>
+                          <th nzAlign="center">Player Name</th>
+                          <th nzAlign="center">Age</th>
+                          <th nzAlign="center">Positions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let item of data.opti1">
+                          <td nzAlign="center">
+                            {{item.player_name}}
+                          </td>
+                          <td nzAlign="center">
+                            {{item.age}}
+                          </td>
+                          <td nzAlign="center">
+                            {{item.all_positions}}
+                          </td>
+
+                        </tr>
+
+                      </tbody>
+                    </nz-table>
+                  </div>
+                </div>
+
+              </div>
+
+              <div nz-col nzSpan="12">
+
+                <div nz-row class="w-full items-center pb-2">
+                  <div nz-col nzSpan="24" class="text-center">
+                    <span class="text-grey3 text-action1 font-bold">{{this.away_team}}</span>
+                  </div>
+
+                </div>
+
+                <div nz-row class="w-full items-center pl-2">
+                  <div nz-col nzSpan="24">
+                    <nz-table class="table-border table-cell-middle w-full" nzSize="middle">
+                      <thead>
+                        <tr>
+                          <th nzAlign="center">Player Name</th>
+                          <th nzAlign="center">Age</th>
+                          <th nzAlign="center">Positions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let item of data.opti2">
+                          <td nzAlign="center">
+                            {{item.player_name}}
+                          </td>
+                          <td nzAlign="center">
+                            {{item.age}}
+                          </td>
+                          <td nzAlign="center">
+                            {{item.all_positions}}
+                          </td>
+
+                        </tr>
+                      </tbody>
+                    </nz-table>
+                  </div>
+                </div>
+
+              </div>
+
+
+
+
+
+
+            </div>
+
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+</div>

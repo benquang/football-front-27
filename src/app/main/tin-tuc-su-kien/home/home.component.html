@@ -1,0 +1,49 @@
+<div class="w-full">
+  <app-banner-intro [imgSrc]="image" [title]="title"></app-banner-intro>
+</div>
+<div nz-row>
+  <div nz-col nzSpan="24">
+    <app-breadcrumb-home [breadcrumb]="breadcrumbObj"></app-breadcrumb-home>
+  </div>
+</div>
+<div nz-row nzGutter="24">
+  <div nz-col nzSpan="24" nzSm="24" nzLg="16" class="mb-5">
+    <nz-tag [nzColor]="tagColor('Tất cả')"
+      class="text-grey2 text-base p-1 mr-5x3 cursor-pointer rounded"
+      (click)="filterTintucsByTag('Tất cả')">
+      <span class="p-2">{{langData.TAT_CA}}</span>
+    </nz-tag>
+    <nz-tag [nzColor]="tagColor('TIN TỨC')"
+      class="text-grey2 text-base p-1 mr-5x3 cursor-pointer rounded"
+      (click)="filterTintucsByTag('TIN TỨC')">
+      <span class="p-2">{{langData.TIN_TUC}}</span>
+    </nz-tag>
+    <nz-tag [nzColor]="tagColor('SỰ KIỆN')"
+      class="text-grey2 text-base p-1 mr-5x3 cursor-pointer rounded"
+      (click)="filterTintucsByTag('SỰ KIỆN')">
+      <span class="p-2">{{langData.SU_KIEN}}</span>
+    </nz-tag>
+  </div>
+
+</div>
+<div nz-row nzGutter="24" class="mt-5x1 mb-10">
+  <div nz-col nzSpan="24" nzSm="24" nzLg="16">
+    <div class="mb-5x2">
+      <!-- ---------- -->
+      <app-danh-sach-tt-sk-tb [listData]="filteredTintucs"></app-danh-sach-tt-sk-tb>
+      <!-- ---------- -->
+    </div>
+
+    <div class="flex justify-center items-center pb-10 mt-10">
+      <app-pagination-page [totalItems]="456" [limit]="10" [currentPage]="1"
+        (pageChanged)="pageChange($event)"></app-pagination-page>
+    </div>
+  </div>
+  <div nz-col nzSpan="24" nzSm="24" nzLg="8">
+    <app-tb-tt-sk-side-panel [title]="tinMoiNhatTitle" [tag]="langData.TIN_TUC"
+      [listData]=" tinmoinhats"></app-tb-tt-sk-side-panel>
+    <div class="mt-5"></div>
+    <app-tb-tt-sk-side-panel [title]="suKienMoiNhatTitle"
+      [listData]="sukienmoinhats"></app-tb-tt-sk-side-panel>
+  </div>
+</div>

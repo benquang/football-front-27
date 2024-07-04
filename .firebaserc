@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "kltn-cloud-420208",
+    "staging": "kltn-cloud-420208"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}

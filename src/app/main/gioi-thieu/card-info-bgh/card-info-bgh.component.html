@@ -1,0 +1,24 @@
+<div [ngClass]="{'!h-max': isContentVisible }"
+  class="h-[505px] w-[887px] rounded-xl bg-white flex relative items-start shadow-1x">
+  <div class="w-[375px] h-[420px] bg-white rounded-xl pt-3 pl-3">
+    <img [src]="bghInfo.image" class="w-full h-full rounded-xl"
+      onerror="this.src='assets/img/other/user.png'" />
+  </div>
+  <div [ngClass]="{'!h-auto': isContentVisible }"
+    class="h-[450px] w-[500px] pt-4 px-5x3 font-inter flex-1 rounded-xl mb-5 bg-white overflow-hidden">
+    <div class="text-blue3 text-title4 font-semibold leading-32 text-justify uppercase"
+      [innerHTML]="bghInfo.name"></div>
+    <div
+      class="w-[415px] break-words h-[50px] bg-blue-500 my-2 font-semibold text-action1 text-gray-900 whitespace-pre-wrap"
+      [innerHTML]="bghInfo.description"> </div>
+    <div class="my-2 text-justify" [innerHTML]="bghInfo.info"></div>
+    <div class="my-2" [innerHTML]="bghInfo.contact"></div>
+  </div>
+  <div class="absolute bottom-5 right-3.5 w-full flex justify-end"><br>
+    <a id="toggleButton" class="uppercase text-blue-800 text-metadata2 cursor-pointer"
+      (click)="toggleContent()">
+      {{ isContentVisible ? 'Rút gọn' : 'Xem thêm' }}
+      <i class="ml-5x2 fa-solid fa-caret-right"></i>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<form [formGroup]="form" (keydown.enter)="$event.preventDefault()" class="w-full">
+  <div nz-row class="pb-2.5">
+    <div nz-col nzSpan="24">
+      <label>{{langData.SO_THU_TU}}</label>
+      <label class="field-required"><sup><i class="fa-solid fa-star-of-life"></i></sup></label>
+    </div>
+    <div nz-col nzSpan="24">
+      <input nz-input formControlName="thuTu" [nzStatus]="displayFieldCssZorro(form, 'thuTu')">
+      <app-field-error-display [displayError]="isFieldValid(form, 'thuTu', 'required')"
+        [errorMsg]="langData.KHONG_DUOC_DE_TRONG">
+      </app-field-error-display>
+    </div>
+  </div>
+
+  <div nz-row class="pb-2.5">
+    <div nz-col nzSpan="24">
+      <label>{{langData.TIEU_DE}}</label>
+      <label class="field-required"><sup><i class="fa-solid fa-star-of-life"></i></sup></label>
+    </div>
+    <div nz-col nzSpan="24">
+      <input nz-input formControlName="tieuDe" [nzStatus]="displayFieldCssZorro(form, 'tieuDe')">
+      <app-field-error-display [displayError]="isFieldValid(form, 'tieuDe', 'required')"
+        [errorMsg]="langData.KHONG_DUOC_DE_TRONG">
+      </app-field-error-display>
+    </div>
+  </div>
+
+  <div nz-row class="pb-2.5">
+    <div nz-col nzSpan="24">
+      <label>{{ langData.DUONG_DAN }}</label>
+      <label class="field-required"><sup><i class="fa-solid fa-star-of-life"></i></sup></label>
+    </div>
+    <div nz-col nzSpan="24">
+      <input nz-input formControlName="link" [nzStatus]="displayFieldCssZorro(form, 'link')">
+      <app-field-error-display [displayError]="isFieldValid(form, 'link', 'required')"
+        [errorMsg]="langData.KHONG_DUOC_DE_TRONG">
+      </app-field-error-display>
+    </div>
+  </div>
+
+  <div nz-row class="pb-2.5">
+    <div nz-col nzSpan="24">
+      <label>{{langData.HINH_ANH}}</label>
+      <label class="field-required"><sup><i class="fa-solid fa-star-of-life"></i></sup></label>
+    </div>
+    <div nz-col nzSpan="24">
+      <button nz-button class="w-full" nzType="primary" (click)="openCropImgModal(modalCropImg)">
+        {{ preBannerImg ? langData.CHINH_SUA : langData.THEM_MOI }} {{ langData.HINH_ANH }}
+      </button>
+      <br>
+      <img class="w-full mt-5x1" [src]="preBannerImg | blobToB64:'data:image/jpeg;base64,' | async">
+      <app-field-error-display [displayError]="isFieldValid(form, 'hinhAnhId', 'required')"
+        [errorMsg]="langData.KHONG_DUOC_DE_TRONG">
+      </app-field-error-display>
+    </div>
+  </div>
+
+  <div nz-row class="ant-modal-footer fk-modal-footer">
+    <div nz-col nzSpan="24" class="ali-right">
+      <div class="pl-2.5 footer-btn">
+        <button nz-button nzType="default" nzSize="default" type="button" class="nz-btn-red"
+          (click)="onCancel()"><i class="fa-solid fa-times mr-5x1"></i>{{langData.HUY}}</button>
+      </div>
+      <div class="pl-2.5 footer-btn">
+        <button nz-button nzType="primary" nzSize="default" type="button" (click)="onSubmit()"><i
+            class="fa-solid fa-save mr-5x1"></i>{{langData.LUU}}</button>
+      </div>
+    </div>
+  </div>
+</form>
+<ng-template #modalCropImg>
+  <app-image-cropping [aspectRatio]="bannerRatio"
+    (outpuFile)="closeCropImgModal($event)"></app-image-cropping>
+</ng-template>

@@ -1,0 +1,24 @@
+<div class="h-fit w-full flex flex-col border border-grey5 bg-white rounded-md border-solid p-5x2">
+  <div class="text-blue3 font-bold mb-5x3 mt-5x1 text-title3">{{ title }}</div>
+  <div class="w-full">
+    <div *ngFor="let item of listData" class="flex">
+      <img [src]="item.anhBia" class="w-[160px] h-[90px] rounded mb-5 mt-0 mr-5x2"
+        onerror="this.src='assets/img/bg/default-cover.jpg'">
+      <div class="w-full h-[85px] mb-5">
+        <nz-tag *ngIf="tag" nzColor="blue"
+          class="uppercase mr-5x1 lg:hidden xl:inline-block inline-block">{{tag}}</nz-tag>
+        <span class="text-grey4 text-base font-thin">
+          {{ item.ngayDang | date: 'hh:mm dd/MM/yyyy'}}
+        </span>
+        <div
+          class="w-full h-[60px] line-clamp-2 font-bold text-subtitle py-2 lg:py-0 lg:font-normal xl:py-2 xl:font-bold">
+          {{item.tieuDe}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="w-fit max-w-full font-medium text-blue-light hover:text-primary cursor-pointer ml-1 text-action1"
+    [routerLink]="xemThemRouterLink">
+    {{xemThemTitle}} <i class="fa-solid fa-angle-right ml-5x1"></i>
+  </a>
+</div>

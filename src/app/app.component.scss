@@ -1,0 +1,7 @@
+.go-top-icon {
+  @apply text-red fixed right-0 bottom-0 text-[30px] lg:text-[50px] cursor-pointer p-[10px];
+}
+
+.blur-alert {
+  @apply absolute z-[99999] top-0 inset-x-0 w-full max-w-[300px] p-[20px] m-auto transition-opacity duration-1000 delay-1000;
+}

@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme's font */
+@import "./assets/css/font-face.scss";
+
+/* Nz-Btn Custom color */
+@import "./assets/css/nz-btn-custom.scss";
+
+/* Nz-Modal custom */
+@import "./assets/css/nz-modal-custom.scss";
+
+/* Nz-table custom */
+@import "./assets/css/nz-table-custom.scss";
+
+/* Drag Drop */
+@import "./assets/css/drag-drop.scss";
+
+/* Form field */
+@import "./assets/css/form-field-css.scss";
+
+/* Other custom */
+@import "./assets/css/other-custom.scss";
+
+html {
+  @apply scroll-smooth [--antd-wave-shadow-color:#2e3192];
+  /* --antd-wave-shadow-color: #00796b; */
+}
+
+body {
+  @apply overflow-x-hidden;
+}
+
+* {
+  @apply font-base text-base font-normal tracking-[-0.2px];
+}
+
+/* Scrollbar style common */
+::-webkit-scrollbar-track {
+  @apply w-2.5 [-webkit-box-shadow:inset_0_0_6px_rgba(0,0,0,0.3)] shadow-[inset_0_0_6px_rgba(0,0,0,0.3)] bg-lightgray;
+}
+
+::-webkit-scrollbar {
+  @apply w-2.5 h-2.5 bg-lightgray;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-dark w-2.5 bg-[-webkit-linear-gradient(_45deg,rgba(255,255,255,0.2)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.2)_50%,rgba(255,255,255,0.2)_75%,transparent_75%,transparent)];
+}
+
+/* End: Scrollbar style common */
+
+/* Global CkEditor 5 */
+/* CkE Default */
+.ck-editor__editable_inline {
+  @apply min-h-[100px] max-h-[500px] overflow-scroll;
+}
+
+/* CkE Default */
+.cke-h50px .ck-editor__editable_inline {
+  @apply min-h-[50px] #{!important};
+}
+
+/* CkE Default */
+.cke-h200px .ck-editor__editable_inline {
+  @apply min-h-[200px] #{!important};
+}
+
+.ck-balloon-panel {
+  @apply z-[2000] #{!important};
+}
+/* End Global CkEditor 5 */
+
+/* Hide spin up / down button of input number */
+input[type="number"].hide-spin-up-down::-webkit-inner-spin-button,
+input[type="number"].hide-spin-up-down::-webkit-outer-spin-button {
+  @apply [-webkit-appearance:none] m-0;
+}
+/* END Hide spin up / down button of input number */
+
+.navbar .ant-popover-arrow {
+  @apply hidden;
+}
+.navbar .ant-popover-inner {
+  @apply border-solid border-l-5 border-y-0 border-r-0 border-l-primary;
+}
+.navbar .ant-popover-inner-content {
+  @apply px-3 py-2;
+}

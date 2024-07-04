@@ -1,0 +1,32 @@
+<div class="w-full">
+  <app-banner-intro [imgSrc]="image1" [title]="langData.QH_DOANH_NGHIEP"></app-banner-intro>
+</div>
+<div nz-row class="py-5x2">
+  <div nz-col nzSpan="24">
+    <app-breadcrumb-home [breadcrumb]="breadcrumbObj"></app-breadcrumb-home>
+  </div>
+</div>
+<div nz-row nzGutter="24" class="mt-5x2">
+  <div nz-col nzSpan="24" nzMd="16">
+    <app-banner-intro [imgSrc]="image2" [title]="langData.TUYEN_DUNG_TU_DN"></app-banner-intro>
+    <div class="w-full relative align-top flex justify-center mt-10">
+      <span class="text-black text-title3 font-bold w-full">
+        {{langData.DN_LIEN_KET}}</span>
+    </div>
+    <div class="w-full mt-9 mb-8">
+      <app-slide-card-affiliated-businesses></app-slide-card-affiliated-businesses>
+    </div>
+    <div>
+      <app-top-jobs-list></app-top-jobs-list>
+    </div>
+    <div class="w-full flex justify-center items-center mt-10 mb-5x6">
+      <button
+        class="font-medium uppercase text-white text-action1 bg-primary rounded-full border-0 px-2 py-3 w-52 cursor-pointer hover:shadow-1x transition-all">
+        {{langData.XEM_THEM}}
+      </button>
+    </div>
+  </div>
+  <div nz-col nzSpan="24" nzMd="8" class="mb-5">
+    <app-side-menu-page [panels]="panels"></app-side-menu-page>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/hcmute-portal-fe-23",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

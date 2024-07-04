@@ -1,0 +1,7 @@
+nz-input-group ::ng-deep .ant-input-affix-wrapper {
+  @apply rounded-tl-xl rounded-bl-xl #{!important};
+}
+
+nz-input-group ::ng-deep .ant-input-group-addon {
+  @apply rounded-tr-xl rounded-br-xl #{!important};
+}

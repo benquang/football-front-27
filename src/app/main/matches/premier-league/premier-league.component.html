@@ -1,0 +1,1072 @@
+<div class="py-5x2">
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <app-breadcrumb-home [breadcrumb]="breadcrumbObj"></app-breadcrumb-home>
+    </div>
+  </div>
+
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <div class="list-container">
+
+        <div *ngFor="let item of data.matchs_infos" class="card-content-container">
+          <span class="text-lightblack-dark text-subtitle font-medium">{{item.home_team}} vs
+            {{item.away_team}}
+            - {{item.venue_time.split('
+            ').slice(1, 4).join(' ').slice(0, -1)}} - {{item.match_week}} - Season
+            {{item.season}}</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div nz-row>
+    <div nz-col nzSpan="24">
+
+      <div class="list-container">
+
+        <div class="card-container">
+
+          <div class="card-content-container">
+
+            <span class="text-blue2 text-title3 font-bold w-full text-center">Summary</span>
+
+            <div class="card-container w-full">
+              <div class="card-content-container w-full">
+                <div nz-row class="w-full">
+
+                  <div nz-col nzSpan="5">
+                  </div>
+
+                  <div nz-col nzSpan="14">
+
+                    <div nz-row class="w-full items-center mt-10">
+
+                      <div *ngFor="let item of data.matchs_infos" nz-col nzSpan="10"
+                        class="text-right">
+                        <span class="text-grey3 text-action1 font-light">{{item.home_team}}</span>
+                        <img [src]="returnImage(item.home_team)" class="h-20 ml-10">
+                      </div>
+
+                      <div *ngFor="let item of data.matchs_model" nz-col nzSpan="4"
+                        class="text-center">
+                        <span class="text-black text-4xl font-bold">{{
+                          item.home_score + ' : ' + item.away_score
+                          }}</span>
+                      </div>
+
+                      <div *ngFor="let item of data.matchs_infos" nz-col nzSpan="10">
+                        <img [src]="returnImage(item.away_team)" class="h-20 mr-10">
+                        <span class="text-grey3 text-action1 font-light">{{item.away_team}}</span>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div nz-col nzSpan="5" class="w-full text-right">
+
+                  </div>
+                </div>
+
+                <div nz-row class="w-full">
+                  <div nz-col nzSpan="5" class="w-full">
+                  </div>
+                  <div nz-col nzSpan="14" class="w-full">
+
+                    <div nz-row class="w-full items-center mt-10">
+                      <div nz-col nzSpan="10">
+                        <div class="duongvien w-full"></div>
+                      </div>
+                      <div nz-col nzSpan="4">
+
+                      </div>
+                      <div nz-col nzSpan="10">
+                        <div class="duongvien w-full"></div>
+                      </div>
+                    </div>
+
+                    <div nz-row class="w-full items-center mt-2">
+                      <div *ngFor="let item of data.matchs_model" nz-col nzSpan="10"
+                        class="text-right">
+                        <span class="text-grey3 text-action1 font-bold">Manager: </span>
+                        <span
+                          class="text-grey3 text-action1 font-light">{{item.home_manager}}</span>
+                      </div>
+                      <div nz-col nzSpan="4">
+
+                      </div>
+                      <div *ngFor="let item of data.matchs_model" nz-col nzSpan="10"
+                        class="text-left">
+                        <span class="text-grey3 text-action1 font-bold">Manager: </span>
+                        <span
+                          class="text-grey3 text-action1 font-light">{{item.away_manager}}</span>
+                      </div>
+                    </div>
+
+                    <div nz-row class="w-full items-center mt-2">
+                      <div nz-col nzSpan="10">
+                        <div class="duongvien w-full"></div>
+                      </div>
+                      <div nz-col nzSpan="4">
+
+                      </div>
+                      <div nz-col nzSpan="10">
+                        <div class="duongvien w-full"></div>
+                      </div>
+                    </div>
+
+                    <div nz-row class="w-full items-center mt-2">
+                      <div *ngFor="let item of data.matchs_model" nz-col nzSpan="10"
+                        class="text-right">
+                        <span class="text-grey3 text-action1 font-bold">Catain: </span>
+                        <span
+                          class="text-grey3 text-action1 font-light">{{item.home_captain}}</span>
+                      </div>
+                      <div nz-col nzSpan="4">
+
+                      </div>
+                      <div *ngFor="let item of data.matchs_model" nz-col nzSpan="10"
+                        class="text-left">
+                        <span class="text-grey3 text-action1 font-bold">Catain: </span>
+                        <span
+                          class="text-grey3 text-action1 font-light">{{item.away_captain}}</span>
+                      </div>
+                    </div>
+
+                    <div *ngFor="let item of data.matchs_infos" nz-row
+                      class="w-full items-center mt-5">
+                      <div nz-col nzSpan="24" class="text-center">
+                        <span class="text-grey3 text-action1 font-bold">{{
+                          item.venue_time.split(' ').slice(4, 5).join(' ') }} - </span>
+                        <span class="text-grey3 text-action1 font-light">{{item.match_date}}</span>
+                      </div>
+                    </div>
+
+                    <div *ngFor="let item of data.matchs_infos" nz-row class="w-full items-center">
+                      <div nz-col nzSpan="24" class="text-center">
+                        <span class="text-grey3 text-action1 font-light">Premier League </span>
+                        <span class="text-grey3 text-action1 font-bold">({{item.match_week}})</span>
+                      </div>
+                    </div>
+
+                    <div *ngFor="let item of data.matchs_infos" nz-row class="w-full items-center">
+                      <div nz-col nzSpan="24" class="text-center">
+                        <span class="text-grey3 text-action1 font-bold">Attendance: </span>
+                        <span class="text-grey3 text-action1 font-light">{{item.attendance}}</span>
+                      </div>
+                    </div>
+
+                    <div *ngFor="let item of data.matchs_infos" nz-row class="w-full items-center">
+                      <div nz-col nzSpan="24" class="text-center">
+                        <span class="text-grey3 text-action1 font-bold">Venue: </span>
+                        <span class="text-grey3 text-action1 font-light">{{item.stadium}}</span>
+                      </div>
+                    </div>
+
+                    <div *ngFor="let item of data.matchs_infos" nz-row class="w-full items-center">
+                      <div nz-col nzSpan="24" class="text-center">
+                        <span class="text-grey3 text-action1 font-bold">Officials: </span>
+                        <span class="text-grey3 text-action1 font-light">{{item.officials}}</span>
+                      </div>
+                    </div>
+
+
+
+                  </div>
+                  <div nz-col nzSpan="5" class="w-full">
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+
+            <div class="w-full text-center mt-20">
+              <span class="text-blue2 text-title3 font-bold w-full">Goals</span>
+
+            </div>
+
+            <div *ngFor="let item of home_team_goals" nz-row class="w-full items-center">
+              <div nz-col nzSpan="11" class="text-right">
+                <span *ngIf="item.type_of_goal !== 'Normal'"
+                  class="text-grey3 text-action1 font-light">({{item.type_of_goal}})</span>
+                <span class="text-grey3 text-action1 font-light ml-5">{{item.player_name}}</span>
+                <img src="/assets/img/logo/ball.svg" class="w-5 ml-5">
+              </div>
+              <div nz-col nzSpan="2" class="text-center">
+                <span class="text-grey3 text-action1 font-bold">{{item.minute}}'</span>
+              </div>
+              <div nz-col nzSpan="11" class="text-left">
+
+              </div>
+            </div>
+
+            <div *ngFor="let item of away_team_goals" nz-row class="w-full items-center">
+              <div nz-col nzSpan="11" class="text-right">
+
+              </div>
+              <div nz-col nzSpan="2" class="text-center">
+                <span class="text-grey3 text-action1 font-bold">{{item.minute}}'</span>
+              </div>
+              <div nz-col nzSpan="11" class="text-left">
+                <img src="/assets/img/logo/ball.svg" class="w-5 mr-5">
+                <span class="text-grey3 text-action1 font-light mr-5">{{item.player_name}}</span>
+                <span *ngIf="item.type_of_goal !== 'Normal'"
+                  class="text-grey3 text-action1 font-light">({{item.type_of_goal}})</span>
+              </div>
+            </div>
+
+
+            <div class="w-full text-center mt-20">
+              <span class="text-blue2 text-title3 font-bold w-full text-center">Stats</span>
+
+            </div>
+
+
+
+
+            <div class="card-container w-full">
+              <div class="card-content-container w-full">
+
+
+                <div nz-row class="w-full items-center">
+                  <div nz-col nzSpan="8"></div>
+                  <div nz-col nzSpan="4" class="text-center">
+
+                    <div nz-row class="w-full items-center">
+
+                      <div nz-col nzSpan="24" class="text-center">
+                        <span class="text-grey3 text-action1 font-light">Possession</span>
+                      </div>
+
+                    </div>
+                    <div nz-row class="w-full items-center">
+
+                      <div nz-col nzSpan="9" class="text-right">
+                        <span
+                          class="text-grey3 text-action1 font-light">{{home_team.possession}}%</span>
+                      </div>
+                      <div nz-col nzSpan="6" class="text-center">
+                        <span class="text-grey3 text-action1 font-light">|</span>
+                      </div>
+                      <div nz-col nzSpan="9" class="text-left">
+                        <span
+                          class="text-grey3 text-action1 font-light">{{away_team.possession}}%</span>
+
+                      </div>
+
+                    </div>
+
+                    <div nz-row class="w-full items-center">
+
+                      <div nz-col nzSpan="24" class="text-center">
+                        <span class="text-grey3 text-action1 font-light">Passing</span>
+                      </div>
+
+                    </div>
+                    <div nz-row class="w-full items-center">
+
+                      <div nz-col nzSpan="9" class="text-right">
+                        <span
+                          class="text-grey3 text-action1 font-light">{{home_team.passes_att}}</span>
+                      </div>
+                      <div nz-col nzSpan="6" class="text-center">
+                        <span class="text-grey3 text-action1 font-light">|</span>
+                      </div>
+                      <div nz-col nzSpan="9" class="text-left">
+                        <span
+                          class="text-grey3 text-action1 font-light">{{away_team.passes_att}}</span>
+
+                      </div>
+
+                    </div>
+
+                    <div nz-row class="w-full items-center">
+
+                      <div nz-col nzSpan="24" class="text-center">
+                        <span class="text-grey3 text-action1 font-light">Shots</span>
+                      </div>
+
+                    </div>
+                    <div nz-row class="w-full items-center">
+
+                      <div nz-col nzSpan="9" class="text-right">
+                        <span class="text-grey3 text-action1 font-light">{{home_team.sh}}</span>
+                      </div>
+                      <div nz-col nzSpan="6" class="text-center">
+                        <span class="text-grey3 text-action1 font-light">|</span>
+                      </div>
+                      <div nz-col nzSpan="9" class="text-left">
+                        <span class="text-grey3 text-action1 font-light">{{away_team.sh}}</span>
+
+                      </div>
+                    </div>
+
+                    <div nz-row class="w-full items-center">
+
+                      <div nz-col nzSpan="24" class="text-center">
+                        <span class="text-grey3 text-action1 font-light">Fouls</span>
+                      </div>
+
+                    </div>
+                    <div nz-row class="w-full items-center">
+
+                      <div nz-col nzSpan="9" class="text-right">
+                        <span class="text-grey3 text-action1 font-light">{{home_team.fouls}}</span>
+                      </div>
+                      <div nz-col nzSpan="6" class="text-center">
+                        <span class="text-grey3 text-action1 font-light">|</span>
+                      </div>
+                      <div nz-col nzSpan="9" class="text-left">
+                        <span class="text-grey3 text-action1 font-light">{{away_team.fouls}}</span>
+
+                      </div>
+                    </div>
+
+
+                  </div>
+
+
+                  <div nz-col nzSpan="4">
+                    <div nz-row class="w-full items-center">
+
+                      <div nz-col nzSpan="24" class="text-center">
+                        <span class="text-grey3 text-action1 font-light">Offsides</span>
+                      </div>
+
+                    </div>
+                    <div nz-row class="w-full items-center">
+
+                      <div nz-col nzSpan="9" class="text-right">
+                        <span
+                          class="text-grey3 text-action1 font-light">{{home_team.offsides}}</span>
+                      </div>
+                      <div nz-col nzSpan="6" class="text-center">
+                        <span class="text-grey3 text-action1 font-light">|</span>
+                      </div>
+                      <div nz-col nzSpan="9" class="text-left">
+                        <span
+                          class="text-grey3 text-action1 font-light">{{away_team.offsides}}</span>
+
+                      </div>
+                    </div>
+
+                    <div nz-row class="w-full items-center">
+
+                      <div nz-col nzSpan="24" class="text-center">
+                        <span class="text-grey3 text-action1 font-light">Corners</span>
+                      </div>
+
+                    </div>
+                    <div nz-row class="w-full items-center">
+
+                      <div nz-col nzSpan="9" class="text-right">
+                        <span
+                          class="text-grey3 text-action1 font-light">{{home_team.corners}}</span>
+                      </div>
+                      <div nz-col nzSpan="6" class="text-center">
+                        <span class="text-grey3 text-action1 font-light">|</span>
+                      </div>
+                      <div nz-col nzSpan="9" class="text-left">
+                        <span
+                          class="text-grey3 text-action1 font-light">{{away_team.corners}}</span>
+
+                      </div>
+                    </div>
+
+                    <div nz-row class="w-full items-center">
+
+                      <div nz-col nzSpan="24" class="text-center">
+                        <span class="text-grey3 text-action1 font-light">Aerials_Won</span>
+                      </div>
+
+                    </div>
+                    <div nz-row class="w-full items-center">
+
+                      <div nz-col nzSpan="9" class="text-right">
+                        <span
+                          class="text-grey3 text-action1 font-light">{{home_team.aerials_won}}</span>
+                      </div>
+                      <div nz-col nzSpan="6" class="text-center">
+                        <span class="text-grey3 text-action1 font-light">|</span>
+                      </div>
+                      <div nz-col nzSpan="9" class="text-left">
+                        <span
+                          class="text-grey3 text-action1 font-light">{{away_team.aerials_won}}</span>
+
+                      </div>
+                    </div>
+
+                    <div nz-row class="w-full items-center">
+
+                      <div nz-col nzSpan="24" class="text-center">
+                        <span class="text-grey3 text-action1 font-light">Long Ball</span>
+                      </div>
+
+                    </div>
+                    <div nz-row class="w-full items-center">
+
+                      <div nz-col nzSpan="9" class="text-right">
+                        <span
+                          class="text-grey3 text-action1 font-light">{{home_team.long_balls}}</span>
+                      </div>
+                      <div nz-col nzSpan="6" class="text-center">
+                        <span class="text-grey3 text-action1 font-light">|</span>
+                      </div>
+                      <div nz-col nzSpan="9" class="text-left">
+                        <span
+                          class="text-grey3 text-action1 font-light">{{away_team.long_balls}}</span>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div nz-col nzSpan="8"></div>
+                </div>
+
+
+              </div>
+            </div>
+
+
+            <div class="w-full text-center mt-20">
+              <span class="text-red text-title3 font-bold w-full text-center">Team
+                Statistics</span>
+            </div>
+
+
+
+            <span class="text-blue2 text-title4 font-light w-full text-center">{{home_team.team}}
+              (Home)</span>
+
+
+            <nz-table class="table-border table-cell-middle w-full" nzSize="middle">
+              <thead>
+                <tr>
+                  <th nzAlign="center" colspan="6"></th>
+                  <th nzAlign="center" colspan="12">Performance</th>
+                  <th nzAlign="center" colspan="3">Expected</th>
+                  <th nzAlign="center" colspan="2">SCA</th>
+                  <th nzAlign="center" colspan="4">Passess</th>
+                  <th nzAlign="center" colspan="2">Carries</th>
+                  <th nzAlign="center" colspan="2">Take-Ons</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td nzAlign="left" class="font-bold text-metadata2">
+                    Player
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    #
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Nation
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Pos
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Age
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Min
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Gls
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Ast
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    PK
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    PKatt
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Sh
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    SoT
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    CrdY
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    CrdY
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Touches
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Tkl
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Int
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Blocks
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    xG
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    xpxG
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    xAG
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    SCA
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    GCA
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Cmp
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Att
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Cmp%
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    PrgP
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Carries
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    PrgC
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Att
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Succ
+                  </td>
+                </tr>
+                <tr *ngFor="let item of home_team_stats">
+                  <td nzAlign="center">
+                    {{item.player_name}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.player_kitnum}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.nationality}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.position}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.age.substring(0, 2)}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.minutes}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.gls}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.ast}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.PK}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.pk_att}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.sh}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.sot}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.crdy}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.crdr}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.touches}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.tkl}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.int}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.blocks}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.xg}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.npxg}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.xag}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.sca}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.gca}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.passes_cmp}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.passes_att}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.passes_cmp_percentage}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.passes_prgp}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.carries}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.carries_prgc}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.take_ons_att}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.take_ons_succ}}
+                  </td>
+                </tr>
+                <tr>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.total_players_stats}} Players
+                  </td>
+                  <td nzAlign="center" class="w-5"></td>
+                  <td nzAlign="center">
+
+                  </td>
+                  <td nzAlign="center">
+
+                  </td>
+                  <td nzAlign="center">
+
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.minutes}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.gls}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.ast}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.PK}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.pk_att}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.sh}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.sot}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.crdy}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.crdr}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.touches}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.tkl}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.int}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.blocks}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.xg}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.npxg}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.xag}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.sca}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.gca}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.passes_cmp}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.passes_att}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.passes_cmp_percentage}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.passes_prgp}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.carries}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.carries_prgc}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.take_ons_att}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{home_team.take_ons_succ}}
+                  </td>
+                </tr>
+              </tbody>
+            </nz-table>
+
+            <span class="text-blue2 text-title4 font-light w-full text-center">{{away_team.team}}
+              (Away)</span>
+
+            <nz-table class="table-border table-cell-middle w-full" nzSize="middle">
+              <thead>
+                <tr>
+                  <th nzAlign="center" colspan="6"></th>
+                  <th nzAlign="center" colspan="12">Performance</th>
+                  <th nzAlign="center" colspan="3">Expected</th>
+                  <th nzAlign="center" colspan="2">SCA</th>
+                  <th nzAlign="center" colspan="4">Passess</th>
+                  <th nzAlign="center" colspan="2">Carries</th>
+                  <th nzAlign="center" colspan="2">Take-Ons</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td nzAlign="left" class="font-bold text-metadata2">
+                    Player..................
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    #
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Nation
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Pos
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Age
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Min
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Gls
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Ast
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    PK
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    PKatt
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Sh
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    SoT
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    CrdY
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    CrdY
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Touches
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Tkl
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Int
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Blocks
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    xG
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    xpxG
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    xAG
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    SCA
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    GCA
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Cmp
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Att
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Cmp%
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    PrgP
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Carries
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    PrgC
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Att
+                  </td>
+                  <td nzAlign="center" class="font-bold text-metadata2">
+                    Succ
+                  </td>
+                </tr>
+                <tr *ngFor="let item of away_team_stats">
+                  <td nzAlign="center">
+                    {{item.player_name}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.player_kitnum}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.nationality}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.position}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.age.substring(0, 2)}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.minutes}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.gls}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.ast}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.PK}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.pk_att}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.sh}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.sot}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.crdy}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.crdr}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.touches}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.tkl}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.int}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.blocks}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.xg}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.npxg}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.xag}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.sca}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.gca}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.passes_cmp}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.passes_att}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.passes_cmp_percentage}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.passes_prgp}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.carries}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.carries_prgc}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.take_ons_att}}
+                  </td>
+                  <td nzAlign="center">
+                    {{item.take_ons_succ}}
+                  </td>
+                </tr>
+                <tr>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.total_players_stats}} Players
+                  </td>
+                  <td nzAlign="center" class="w-5"></td>
+                  <td nzAlign="center">
+
+                  </td>
+                  <td nzAlign="center">
+
+                  </td>
+                  <td nzAlign="center">
+
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.minutes}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.gls}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.ast}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.PK}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.pk_att}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.sh}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.sot}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.crdy}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.crdr}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.touches}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.tkl}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.int}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.blocks}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.xg}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.npxg}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.xag}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.sca}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.gca}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.passes_cmp}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.passes_att}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.passes_cmp_percentage}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.passes_prgp}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.carries}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.carries_prgc}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.take_ons_att}}
+                  </td>
+                  <td nzAlign="center" class="font-bold">
+                    {{away_team.take_ons_succ}}
+                  </td>
+                </tr>
+              </tbody>
+            </nz-table>
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+</div>

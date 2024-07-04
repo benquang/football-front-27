@@ -1,0 +1,36 @@
+<div class="w-full overflow-hidden bg-white">
+  <app-banner-intro title="Đào tạo"></app-banner-intro>
+  <div class="lg:px-12 md:px-9 sm:px-6 px-3">
+    <div class="py-2"><app-breadcrumb-home [breadcrumb]="breadcrumbObj"></app-breadcrumb-home></div>
+    <div class="mb-10"><app-plan-chart [data]="bieuDoGdData"></app-plan-chart></div>
+  </div>
+  <div class="pt-10 lg:px-12 md:px-9 sm:px-6 px-3 mb-32 relative">
+    <img src="assets/img/logo/hcmute-logo-artwork1.svg" class="w-auto h-auto absolute top-0 left-0">
+    <img src="assets/img/logo/hcmute-logo-artwork2.svg"
+      class="w-auto h-auto absolute -bottom-40 right-0">
+    <div>
+      <div class="text-title1 text-red font-bold capitalize text-center mb-10 z-10 relative">
+        {{langData.NHOM_NGANH_DAO_TAO}}
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-6">
+        <a *ngFor="let data of dataNhomDaoTao" [href]="data.link" target="_self"
+          class="flex flex-col cursor-pointer items-center justify-center gap-5 hover:shadow-1x hover:bg-white rounded py-5x6 transition-all w-80 h-80 z-10">
+          <img [src]="data.image" class="w-32 h-auto bg-white p-2"
+            onerror="this.src='assets/img/bg/default-cover.jpg'">
+          <span class="text-primary text-title3 font-bold text-center capitalize px-5x6">{{
+            data.title }}</span>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="text-title1 text-red font-bold capitalize text-center my-20 z-10 relative">
+        {{langData.LOAI_HINH_DAO_TAO}}
+      </div>
+      <div nz-row nzGutter="30" class="items-center justify-center">
+        <div nz-col nzLg="8" nzMd="12" class="rounded-2xl z-10 mb-5x6" *ngFor="let data of datas">
+          <app-card-image [data]="data"></app-card-image>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="py-5x2">
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <app-breadcrumb-home [breadcrumb]="breadcrumbObj"></app-breadcrumb-home>
+    </div>
+  </div>
+
+
+  <div class="w-full flex-col justify-start items-start gap-4 inline-flex;">
+
+    <div class="list-container">
+      <div class="card-container" *ngFor="let card of cards">
+        <div class="card-image-container">
+          <img [src]="card.imageSrc" onerror="this.src='assets/img/other/user.png'">
+        </div>
+        <div class="card-content-container">
+          <span class="text-lightblack-dark text-subtitle font-medium">{{card.title}}</span>
+          <span
+            class="text-grey3 text-action1 font-light overflow-hidden text-ellipsis whitespace-normal h-14 text-justify">
+            {{card.description}}
+          </span>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>

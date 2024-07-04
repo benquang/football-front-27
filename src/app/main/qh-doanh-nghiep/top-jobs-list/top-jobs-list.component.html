@@ -1,0 +1,20 @@
+<div class="w-full flex-col justify-start items-start gap-4 inline-flex;">
+  <div><span class="text-grey1 text-title3 font-bold capitalize">
+      {{langData.VIEC_LAM_TOT_NHAT}}
+    </span></div>
+  <div class="list-container">
+    <div class="card-container" *ngFor="let card of cards">
+      <div class="card-image-container">
+        <img [src]="card.imageSrc" onerror="this.src='assets/img/other/user.png'">
+      </div>
+      <div class="card-content-container">
+        <span class="text-lightblack-dark text-subtitle font-medium">{{card.title}}</span>
+        <span
+          class="text-grey3 text-action1 font-light overflow-hidden text-ellipsis whitespace-normal h-14 text-justify">
+          {{card.description}}
+        </span>
+        <button><span>{{langData.XEM_CHI_TIET}}</span></button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+:host .content-container::ng-deep{
+  @apply text-justify;
+}
+
+:host .content-container::ng-deep img{
+  @apply w-full;
+}

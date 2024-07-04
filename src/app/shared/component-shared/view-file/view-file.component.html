@@ -1,0 +1,49 @@
+<h4>{{langData.XEM_TRUOC}} {{localViewer === 'imageViewer' ? langData.ANH : ''}}</h4>
+<div class="modal-body">
+  <div class="container-view-file">
+    <div class="toolbar" *ngIf="fileId">
+      <!-- <div class="toolbar-left">
+        <button type="button" class="btn btn-default btn-animation" (click)="hide()">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+      </div> -->
+      <!-- <div class="toolbar-right">
+        <button type="button" class="btn btn-default btn-animation">
+          <i class="fa-solid fa-cloud-download-alt"></i>
+        </button>
+        <button type="button" class="btn btn-default btn-animation">
+          <i class="fa-solid fa-ellipsis-v"></i>
+        </button>
+      </div> -->
+    </div>
+    <div class="vertical-center">
+      <div class="container">
+        <div class="file-container">
+          <ng-container [ngSwitch]="localViewer">
+            <div *ngSwitchCase="'pdfViewer'" class="pdf-container">
+              <ngx-extended-pdf-viewer [src]="pdfBlob" [showOpenFileButton]="false" [useBrowserLocale]="true"
+                [showUnverifiedSignatures]="true" height="90vh"></ngx-extended-pdf-viewer>
+            </div>
+            <div *ngSwitchCase="'officeViewer'" class="office-container text-center">
+              <!-- ngx-doc-viewer -->
+              <h4>{{langData.FILE_KHONG_HO_TRO_XEM}}</h4>
+              <button nz-button nzType="primary" type="button"
+                (click)="downloadUnsupportedViewFile()">{{langData.TAI_VE}}</button>
+            </div>
+            <div *ngSwitchCase="'imageViewer'" class="image-container">
+              <img alt="Viewing file" [src]="safeResourceUrl" (click)="rotateImage()" id="image" (load)="getImgSize()">
+            </div>
+            <div *ngSwitchCase="'unsupportViewer'" class="wait-container">
+              <h4>{{langData.FILE_KHONG_HO_TRO_XEM}}</h4>
+              <button nz-button nzType="primary" type="button"
+                (click)="downloadUnsupportedViewFile()">{{langData.TAI_VE}}</button>
+            </div>
+            <div *ngSwitchCase="''" class="wait-container">
+              <h5>{{langData.DANG_TAI}}</h5>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

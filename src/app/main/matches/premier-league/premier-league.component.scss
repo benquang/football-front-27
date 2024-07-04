@@ -1,0 +1,33 @@
+.list-container {
+  @apply w-full justify-evenly items-start gap-5 flex flex-wrap mt-4;
+}
+.card-container {
+  @apply border flex-row justify-start items-center gap-4 flex p-4 rounded-lg border-gray-dark border-solid lg:flex-[0_0_calc(100%-10px)] bg-white;
+}
+.card-image-container {
+  @apply w-32 aspect-square flex justify-center relative;
+}
+.card-image-container img {
+  @apply absolute max-w-full max-h-full m-auto inset-0;
+}
+.card-content-container {
+  @apply w-full flex-col justify-start items-start gap-2.5 inline-flex;
+}
+.card-container button {
+  @apply rounded flex-col justify-center items-center gap-2.5 inline-flex px-2 py-3 border border-solid border-blue4 hover:bg-blue4 bg-white ease-in-out transition-colors cursor-pointer;
+}
+.card-container button span {
+  @apply text-blue4 text-metadata2 font-medium uppercase mx-11 ease-in-out transition-colors;
+}
+.card-container button:hover span {
+  @apply text-white ease-in-out transition-colors;
+}
+
+
+.card-container1 {
+  @apply border flex-row justify-start items-center gap-4 flex p-4 rounded-lg border-lightgray-dark border-solid lg:flex-[0_0_calc(100%-10px)] bg-white;
+}
+
+.duongvien {
+  @apply border border-lightgray-dark border-solid lg:flex-[0_0_calc(100%-10px)] bg-white;
+}

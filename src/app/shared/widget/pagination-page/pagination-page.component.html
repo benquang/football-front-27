@@ -1,0 +1,2 @@
+<nz-pagination class="p-1" [(nzPageIndex)]="currentPage" [nzPageSize]="limit" [nzTotal]="totalItems"
+  (nzPageIndexChange)="pageChanged.emit(currentPage)"></nz-pagination>

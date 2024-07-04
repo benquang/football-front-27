@@ -1,0 +1,30 @@
+<div class="py-5x2">
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <app-breadcrumb-home [breadcrumb]="breadcrumbObj"></app-breadcrumb-home>
+    </div>
+  </div>
+  <div nz-row nzGutter="24" class="my-10">
+    <div nz-col nzSpan="24" nzMd="16"
+      class="text-title3 text-red font-bold uppercase text-center mb-9">
+      {{ breadcrumbObj.heading }}
+    </div>
+    <div class="flex mb-10">
+      <div class="w-1/2">
+        <img [src]=description.img onerror="this.src='assets/img/bg/default-cover.jpg'">
+      </div>
+      <div class="w-1/2">
+        <div class="text-2xl font-medium m-2 mb-10" [innerText]="description.infHead"></div>
+        <ul class="list-disc pl-4 m-2 ">
+          <li *ngFor="let item of description.inf" [innerText]="item" class="my-2 text-subtitle">
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex flex-wrap items-center justify-center gap-8">
+      <div class="w-[426px] h-[323px] rounded-2xl" *ngFor="let data of datas">
+        <app-card-image [data]="data"></app-card-image>
+      </div>
+    </div>
+  </div>
+</div>

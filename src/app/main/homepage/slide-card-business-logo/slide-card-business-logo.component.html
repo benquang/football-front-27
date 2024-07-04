@@ -1,0 +1,20 @@
+<div nz-row>
+  <div nz-col nzSpan="4" nzSm="3" nzMd="2" class="text-center leading-[120px]">
+    <i
+      class="nav-prev fa-solid fa-angle-left text-3xl text-blue4 hover:text-white h-[60px] w-[60px] rounded-full bg-black bg-opacity-20 hover:bg-red hover:bg-opacity-100 leading-[60px] cursor-pointer"></i>
+  </div>
+  <div nz-col nzSpan="16" nzSm="18" nzMd="20">
+    <swiper-container init="false" #swiperBusinessLogo>
+      <swiper-slide *ngFor="let post of listPostBusinessLogo">
+        <div class="border border-solid border-grey6 w-full h-[120px]">
+          <img src="assets/img/logo/ute_logo.png" onerror="this.src='assets/img/logo/ute_logo.png'"
+            class="w-full h-full object-contain p-5x2">
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </div>
+  <div nz-col nzSpan="4" nzSm="3" nzMd="2" class="text-center leading-[120px]">
+    <i
+      class="nav-next fa-solid fa-angle-right text-3xl text-blue4 hover:text-white h-[60px] w-[60px] rounded-full bg-black bg-opacity-20 hover:bg-red hover:bg-opacity-100 leading-[60px] cursor-pointer"></i>
+  </div>
+</div>

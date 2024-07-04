@@ -1,0 +1,20 @@
+<div class="py-5x2">
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <app-breadcrumb-home [breadcrumb]="breadcrumbObj"></app-breadcrumb-home>
+    </div>
+  </div>
+  <div nz-row nzGutter="24" class="mt-5x1">
+    <div nz-col nzSpan="24" nzMd="16" class="max-md:mx-3">
+      <div nz-row nzGutter="24"
+        class="w-full justify-start items-center max-md:gap-4 max-md:mb-4 inline-flex">
+        <div nz-col nzSpan="24" nzMd="12" class="rounded-2xl" *ngFor="let data of datas">
+          <app-card-image class="card-image" [data]="data"></app-card-image>
+        </div>
+      </div>
+    </div>
+    <div nz-col nzSpan="24" nzMd="8">
+      <app-side-menu-page [panels]="panels"></app-side-menu-page>
+    </div>
+  </div>
+</div>

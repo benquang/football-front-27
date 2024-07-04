@@ -1,0 +1,9 @@
+<swiper-container init="false" #swiper>
+  <swiper-slide *ngIf="!listBannerId.length">
+    <img src="assets/img/bg/default-banner-home.jpg">
+  </swiper-slide>
+  <swiper-slide *ngFor="let bannerId of listBannerId">
+    <img appGetImageSrc [idFile]="bannerId" (returnImageResourceUrl)="storeImgSrc(bannerId, $event)"
+      [src]="listBannerSrc[bannerId]" (error)="onImgError($event)">
+  </swiper-slide>
+</swiper-container>

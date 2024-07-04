@@ -1,0 +1,55 @@
+<div class="hidden md:block mb-40">
+  <div nz-row class="mb-2">
+    <h1>{{title}}</h1>
+  </div>
+  <div nz-row>
+    <div nz-col nzSpan="12" nz-row *ngFor="let item of listData; let i = index">
+      <div *ngIf="i<2">
+        <div class="w-full pr-10 flex flex-col">
+          <div class="flex basis-full">
+            <img [src]="item.anhBia" class="w-[160px] h-[90px] rounded mb-1 mt-0 mr-5x2"
+              onerror="this.src='assets/img/bg/default-cover.jpg'">
+            <div class="w-full h-[85px]">
+              <nz-tag *ngIf="item.tag" nzColor="blue" class="uppercase mr-5x1">{{item.tag}}</nz-tag>
+              <span class="text-grey4 text-base font-thin">
+                {{ item.ngayDang | date: 'hh:mm dd/MM/yyyy'}}
+              </span>
+              <div class="w-full h-[65px] line-clamp-2 font-bold text-subtitle py-2">
+                {{item.tieuDe}}
+              </div>
+            </div>
+          </div>
+          <div class="line-clamp-2 mb-1 mt-2 h-[60px]">
+            {{ item.noiDung }}
+          </div>
+          <div class="w-full mb-2">
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div nz-col nzSpan="12" nz-row *ngFor="let item of listData; let i = index">
+      <div *ngIf="i>=2 and i<4">
+        <div class="w-full pr-10 flex flex-col">
+          <div class="flex basis-full">
+            <img [src]="item.anhBia" class="w-[160px] h-[90px] rounded mb-1 mt-0 mr-5x2"
+              onerror="this.src='assets/img/bg/default-cover.jpg'">
+            <div class="w-full h-[85px]">
+              <nz-tag *ngIf="item.tag" nzColor="blue" class="uppercase mr-5x1">{{item.tag}}</nz-tag>
+              <span class="text-grey4 text-base font-thin">
+                {{ item.ngayDang | date: 'hh:mm dd/MM/yyyy'}}
+              </span>
+              <div class="w-full h-[65px] line-clamp-2 font-bold text-subtitle py-2">
+                {{item.tieuDe}}
+              </div>
+            </div>
+          </div>
+          <div class="line-clamp-2 mb-1 mt-2 h-[60px]">
+            {{ item.noiDung }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

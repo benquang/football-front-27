@@ -1,0 +1,14 @@
+<app-breadcrumb-home [breadcrumb]="breadcrumbObj"></app-breadcrumb-home>
+<div nz-row class="mt-5">
+  <div nz-col nzLg="16" nzSpan="24">
+    <app-content-display [chiTiet]="chiTiet"></app-content-display>
+  </div>
+  <div nz-col nzLg="8" nzSpan="24" class="lg:pl-6 mb-40">
+    <app-tb-tt-sk-side-panel [title]="tinTucXemNhieuNhatTitle" [tag]="tinTucTitle"
+      [listData]="tinTucss"></app-tb-tt-sk-side-panel>
+  </div>
+</div>
+<div nz-row>
+  <app-tin-tuc-lien-quan [title]="tinTucLienQuanTitle"
+    [listData]="tinTucLienQuans"></app-tin-tuc-lien-quan>
+</div>

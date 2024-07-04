@@ -1,0 +1,12 @@
+<div nz-row>
+  <div nz-col nzSpan="24">
+    <div class="relative flex justify-center items-center">
+      <img class="w-full" [src]="imgSrc" onerror="this.src='assets/img/bg/banner-intro.jpg'" />
+      <button
+        class="absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 px-9 py-2 max-sm:px-5 max-sm:py-1 text-blue3 rounded-full border border-solid border-blue4">
+        <i class="fa-solid fa-graduation-cap text-title4 max-sm:text-base mr-3"></i>
+        <b class="text-title4 max-sm:text-base uppercase">{{ title }}</b>
+      </button>
+    </div>
+  </div>
+</div>

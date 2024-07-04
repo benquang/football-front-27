@@ -1,0 +1,246 @@
+<div class="py-5x2">
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <app-breadcrumb-home [breadcrumb]="breadcrumbObj"></app-breadcrumb-home>
+    </div>
+  </div>
+
+  <!--<div style="text-align:center">
+    <h1>
+      Welcome!
+    </h1>
+    <button (click)="getData()">Fetch Data</button>
+  </div> -->
+  <div>
+  <div nz-row nzGutter="24">
+    <div nz-col nzSpan="24" nzSm="24" nzLg="16" class="mb-5">
+      <nz-tag [nzColor]="tagColor('2023-2024')"
+        class="text-grey2 text-base p-1 mr-5x3 cursor-pointer rounded"
+        (click)="filterSeason('2023-2024')">
+        <span class="p-2">2023-2024</span>
+      </nz-tag>
+      <nz-tag [nzColor]="tagColor('2022-2023')"
+        class="text-grey2 text-base p-1 mr-5x3 cursor-pointer rounded"
+        (click)="filterSeason('2022-2023')">
+        <span class="p-2">2022-2023</span>
+      </nz-tag>
+      <nz-tag [nzColor]="tagColor('2021-2022')"
+        class="text-grey2 text-base p-1 mr-5x3 cursor-pointer rounded"
+        (click)="filterSeason('2021-2022')">
+        <span class="p-2">2021-2022</span>
+      </nz-tag>
+      <nz-tag [nzColor]="tagColor('2020-2021')"
+        class="text-grey2 text-base p-1 mr-5x3 cursor-pointer rounded"
+        (click)="filterSeason('2020-2021')">
+        <span class="p-2">2020-2021</span>
+      </nz-tag>
+      <nz-tag [nzColor]="tagColor('2019-2020')"
+        class="text-grey2 text-base p-1 mr-5x3 cursor-pointer rounded"
+        (click)="filterSeason('2019-2020')">
+        <span class="p-2">2019-2020</span>
+      </nz-tag>
+      <nz-tag [nzColor]="tagColor('2018-2019')"
+        class="text-grey2 text-base p-1 mr-5x3 cursor-pointer rounded"
+        (click)="filterSeason('2018-2019')">
+        <span class="p-2">2018-2019</span>
+      </nz-tag>
+    </div>
+
+  </div>
+</div>
+
+  <div *ngIf="selectedTag === '2023-2024' ">
+    <div nz-row>
+      <div nz-col nzSpan="4">
+        <div class="list-container">
+
+          <div class="card-content-container">
+            <span class="text-lightblack-dark text-subtitle font-medium">Premier
+              League</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div nz-row>
+      <div nz-col nzSpan="18">
+
+        <div class="list-container">
+
+          <div class="card-container">
+
+            <div class="card-content-container">
+
+
+              <span class="text-grey3 text-subtitle font-bold w-full">Week
+                9</span>
+
+              <a *ngFor="let item of data_list_2023_2024.matchs_infos" class="w-full"
+                [href]="returnLinkFutureMatch(item.match_id)">
+                <div class="card-container w-full">
+                  <div class="card-content-container w-full">
+                    <div nz-row class="w-full">
+                      <div nz-col nzSpan="5">
+                        <span class="text-grey3 text-action1 font-light w-full">{{
+                          convertThu(item.venue_time.split('
+                          ').slice(0, 1).join(' ')) + item.venue_time.split('
+                          ').slice(1, 4).join(' ').slice(0, -1)
+                          }}</span>
+                      </div>
+                      <div nz-col nzSpan="17" class="w-full text-center">
+
+                        <div nz-row class="w-full items-center">
+                          <div nz-col nzSpan="11" class="text-right">
+                            <span
+                              class="text-grey3 text-action1 font-light w-full text-center mr-3">{{
+                              item.home_team }}</span>
+                            <img [src]="returnImage(item.home_team)" class="h-8 mr-3">
+                          </div>
+                          <div nz-col nzSpan="2">
+                            <span class="text-grey3 text-action3 font-bold w-full text-center">{{
+                              item.venue_time.split(' ').slice(4, 5).join(' ') }}</span>
+                          </div>
+                          <div nz-col nzSpan="11" class="text-left">
+                            <img [src]="returnImage(item.away_team)" class="h-8 ml-3">
+                            <span
+                              class="text-grey3 text-action1 font-light w-full text-center ml-3">{{
+                              item.away_team }}</span>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div nz-col nzSpan="2" class="w-full text-right">
+                        <i class="fa-solid fa-arrow-right mr-5x2"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div nz-row>
+    <div nz-col nzSpan="4">
+      <div class="list-container">
+
+        <div class="card-content-container">
+          <span class="text-lightblack-dark text-subtitle font-medium">History Matches</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div nz-row>
+    <div nz-col nzSpan="18">
+
+      <div class="list-container">
+
+        <div *ngFor="let week of list_week" class="card-container">
+          <div *ngIf="week != 'Matchweek 9'" class="card-content-container">
+
+            <span class="text-grey3 text-subtitle font-bold w-full">{{ week }}</span>
+
+            <a *ngFor="let item of returnMatchbyWeek(week)" class="w-full"
+              [href]="returnLinkMatch(item.match_id)">
+              <div class="card-container w-full">
+                <div class="card-content-container w-full">
+                  <div nz-row class="w-full">
+                    <div nz-col nzSpan="5">
+                      <span class="text-grey3 text-action1 font-light w-full">{{
+                        convertThu(item.venue_time.split('
+                        ').slice(0, 1).join(' ')) + item.venue_time.split('
+                        ').slice(1, 4).join(' ').slice(0, -1)
+                        }}</span>
+                    </div>
+                    <div nz-col nzSpan="17" class="w-full text-center">
+
+                      <div nz-row class="w-full items-center">
+                        <div nz-col nzSpan="11" class="text-right">
+                          <span
+                            class="text-grey3 text-action1 font-light w-full text-center mr-3">{{
+                            item.home_team }}</span>
+                          <img [src]="returnImage(item.home_team)" class="h-8 mr-3">
+                        </div>
+                        <div nz-col nzSpan="2">
+                          <span *ngFor="let score of returnScores(item.match_id)"
+                            class="text-grey3 text-action3 font-bold w-full text-center">{{
+                            score.home_score + ':' + score.away_score
+                            }}</span>
+                        </div>
+                        <div nz-col nzSpan="11" class="text-left">
+                          <img [src]="returnImage(item.away_team)" class="h-8 ml-3">
+                          <span
+                            class="text-grey3 text-action1 font-light w-full text-center ml-3">{{
+                            item.away_team }}</span>
+                        </div>
+
+                      </div>
+
+                    </div>
+                    <div nz-col nzSpan="2" class="w-full text-right">
+                      <i class="fa-solid fa-arrow-right mr-5x2 text-grey3"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="w-full flex-col justify-start items-start gap-4 inline-flex;">
+
+    <div class="list-container">
+
+      <a href="http://localhost:4200/fixtures">
+        <div class="card-container mb-5" *ngFor="let card of cards">
+
+          <div class="card-image-container">
+            <img [src]="card.imageSrc" onerror="this.src='assets/img/other/user.png'">
+          </div>
+
+          <div class="card-content-container">
+            <span class="text-lightblack-dark text-subtitle font-medium">{{card.title}}</span>
+            <span
+              class="text-grey3 text-action1 font-light overflow-hidden text-ellipsis whitespace-normal h-14 text-justify">
+              {{card.description}}
+            </span>
+
+          </div>
+
+        </div>
+      </a>
+
+
+
+    </div>
+
+  </div>
+
+
+</div>

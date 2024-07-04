@@ -1,0 +1,19 @@
+swiper-container::part(button-prev),
+swiper-container::part(button-next) {
+  @apply w-14 h-14 rounded-full text-center bg-black bg-opacity-50 hover:bg-red font-black font-["Font_Awesome_6_Free"] text-white text-3xl;
+}
+
+swiper-container::part(button-prev)::before {
+  @apply content-["\f104"];
+}
+
+swiper-container::part(button-next)::before {
+  @apply content-["\f105"];
+}
+
+swiper-slide {
+  @apply text-center;
+}
+swiper-slide > img {
+  @apply w-full;
+}

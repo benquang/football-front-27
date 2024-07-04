@@ -1,0 +1,14 @@
+<div nz-row class="my-3">
+  <div nz-col nzSpan="24" class="text-center">
+    <div class="relative inline-flex" class="w-full">
+      <a [href]="data.linkDownload" target="_blank" class="w-full">
+        <img class="w-full h-auto" [src]="data.image"
+          onerror="this.src='assets/img/bg/default-cover.jpg'" />
+        <p class="absolute w-full bottom-0 mb-0 bg-blue3 bg-opacity-90
+          text-[white] items-center text-center text-title3 font-bold p-5x6">
+          {{data.title}}
+        </p>
+      </a>
+    </div>
+  </div>
+</div>

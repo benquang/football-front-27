@@ -1,0 +1,19 @@
+.search-box {
+  @apply pl-5x2 #{!important};
+}
+
+.dropdown-menu {
+  @apply absolute z-[999] hidden top-32;
+  /* Đẩy menu xuống dưới */
+  /* Đảm bảo menu hiển thị trên navbar */
+  /* Ẩn ban đầu */
+  @apply bg-white shadow-md py-1 w-full;
+}
+.dropdown-menu a {
+  @apply border-b border-solid border-grey7 border-t-0 border-l-0 border-r-0 ml-2;
+}
+@media (max-width: 576px) {
+  .dropdown-menu.show {
+    @apply block;
+  }
+}

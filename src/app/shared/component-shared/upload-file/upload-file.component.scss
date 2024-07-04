@@ -1,0 +1,74 @@
+/* Maybe need re-config */
+.uploading-icon {
+  @apply w-5 h-5;
+}
+
+/* END */
+
+.file-upload-container {
+  @apply overflow-hidden;
+}
+
+.file-upload-container .list-file {
+  @apply text-left pt-5x1 pb-5x2;
+}
+
+.file-upload-container .file-input {
+  @apply hidden #{!important};
+}
+
+.file-upload-container .dropzone {
+  @apply flex items-center justify-center flex-col font-extra-light p-0.5 bg-white border border-dashed border-primary-max-light duration-200 ease-linear delay-0 transition-all;
+}
+
+.file-upload-container .dropzone.hovering {
+  @apply text-lightgray-dark #{!important};
+}
+
+.file-upload-container .file-label {
+  @apply text-xs cursor-pointer mb-0 px-1.5 py-1 rounded-none border border-solid border-primary text-primary;
+}
+
+.file-upload-container .file-label:hover {
+  @apply bg-primary border border-solid border-primary text-white;
+}
+
+.file-upload-container .file-cta .file-label-sub {
+  @apply ml-5x1;
+}
+
+.file-label-sub {
+  @apply text-primary #{!important};
+}
+
+.file-icon {
+  @apply text-primary #{!important};
+}
+
+.file-upload-container .dropzone .file-label:hover {
+  @apply bg-primary-opa border border-solid border-primary;
+  @apply text-primary-max-light #{!important};
+}
+
+td {
+  @apply p-0 #{!important};
+}
+
+td.icon-col {
+  @apply w-8;
+}
+
+.danger {
+  @apply border border-solid border-red #{!important};
+}
+
+.danger * {
+  @apply text-red #{!important};
+}
+
+/* Tag alternative for NZ-TAG */
+.k-tag {
+  @apply text-primary bg-primary-max-light border border-solid border-primary-light font-light mt-[3px] px-[3px] py-0 rounded-sm;
+}
+
+/* END Tag alternative for NZ-TAG */

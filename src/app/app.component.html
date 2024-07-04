@@ -1,0 +1,23 @@
+<ngx-spinner bdColor="rgba(255,255,255,.8)"
+  template="<img src='assets/img/other/loading.svg' />"></ngx-spinner>
+<!--
+  <ngx-spinner type="ball-newton-cradle"></ngx-spinner>
+  Add to angular.json: "node_modules/ngx-spinner/animations/ball-newton-cradle.css",
+-->
+
+
+<router-outlet></router-outlet>
+
+<i class="fa-solid fa-circle-chevron-up go-top-icon" (click)="goTop()"></i>
+
+<ng-template #offlineMsg>
+  <div class="w-full text-center">
+    <span *ngIf="onlineStt">
+      <i nz-icon nzType="check-circle" class="mr-5x1 text-blue"></i> {{ langData.DA_KET_NOI }}
+    </span>
+    <span *ngIf="!onlineStt">
+      <i nz-icon nzType="loading" [nzSpin]="true" class="mr-5x1 text-blue"></i> {{
+      langData.MAT_KET_NOI }}
+    </span>
+  </div>
+</ng-template>

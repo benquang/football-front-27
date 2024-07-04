@@ -1,0 +1,56 @@
+<div class="bg-white pb-20">
+  <app-banner-intro [title]="langData.QH_DOANH_NGHIEP"></app-banner-intro>
+  <div class=" lg:px-12 md:px-5x6 sm:px-5x4 xs:px-5x3 px-5x2">
+    <app-breadcrumb-home [breadcrumb]="breadcrumbObj"></app-breadcrumb-home>
+    <div nz-row nzGutter="20" class="mt-5x2">
+      <div nz-col nzSpan="24" nzLg="16" class="mb-5x6">
+        <a href="https://pr.hcmute.edu.vn" class="cursor-pointer group">
+          <div class="relative flex justify-center items-center ">
+            <div
+              class="overlay absolute top-0 left-0 right-0 bottom-0 opacity-0 transition-all bg-black group-hover:opacity-10">
+            </div>
+            <img class="w-full hover:bg-gray-dark" [src]="'assets/img/bg/bg-tham-quan-thuc-tap.jpg'"
+              onerror="this.src='assets/img/bg/banner-intro.jpg'" />
+            <button
+              class="cursor-pointer absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 px-9 py-3 max-sm:px-5 max-sm:py-1 text-blue3 rounded-full border border-solid border-blue4">
+              <i class="fa-solid fa-building-user text-title4 max-sm:text-base mr-3"></i>
+              <b class="text-title4 max-sm:text-base uppercase">
+                {{langData.THAM_QUAN_TT}}
+              </b>
+            </button>
+          </div>
+        </a>
+        <div class="mt-4">
+          <div class="text-title3 font-bold capitalize mb-4">
+            {{langData.TIN_TUC}}
+          </div>
+          <app-danh-sach-tt-sk-tb [listData]="thongBaos"></app-danh-sach-tt-sk-tb>
+        </div>
+
+        <div class="w-full flex justify-center items-center mt-10">
+          <button
+            class="font-medium uppercase text-white text-action1 bg-primary rounded-full border-0 px-2 py-3 w-52 cursor-pointer hover:shadow-1x transition-all">
+            {{langData.XEM_THEM}}
+          </button>
+        </div>
+      </div>
+      <div nz-col nzSpan="24" nzLg="8">
+        <div class="w-full rounded-xl overflow-hidden border border-solid border-lightgray-dark">
+          <a href="quan-he-doanh-nghiep/tham-quan-thuc-tap">
+            <div class="bg-primary py-4 px-5x2 ">
+              <span class="text-white text-subtitle font-medium">
+                {{langData.THAM_QUAN_TT}}
+              </span>
+            </div>
+          </a>
+          <a href="quan-he-doanh-nghiep/tuyen-dung-tu-doanh-nghiep">
+            <div class="py-4 px-5x2 border border-solid border-gray-dark border-x-0 border-b-0">
+              <span class="text-subtitle font-medium text-blue1">
+                {{langData.TUYEN_DUNG_TU_DN}}
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>

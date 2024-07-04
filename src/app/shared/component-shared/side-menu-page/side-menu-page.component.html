@@ -1,0 +1,16 @@
+<nz-collapse class="w-full rounded-xl ant-collapse-icon-position-right">
+  <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.name" [nzActive]="panel.active"
+    [routerLink]="panel.url" [ngClass]="{'ant-collapse-arrow-hidden':!panel.contents.length}">
+    <ng-container *ngFor="let content of panel.contents; let last = last">
+      <div class="panel-content">
+        <a *ngIf="content.url.startsWith('http')" [href]="content.url" class="text-action1">
+          {{ content.name }}
+        </a>
+        <a *ngIf="!content.url.startsWith('http')" [routerLink]="content.url">
+          {{ content.name }}
+        </a>
+      </div>
+      <hr *ngIf="!last" class="m-0">
+    </ng-container>
+  </nz-collapse-panel>
+</nz-collapse>

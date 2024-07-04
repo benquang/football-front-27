@@ -1,0 +1,9 @@
+<div class="card-small-container">
+  <a [href]="data.link" target="_self">
+    <div class="flex gap-8 max-xl:gap-4">
+      <img class="max-xs:hidden" [src]="data.image"
+        onerror="this.src='assets/img/bg/default-cover.jpg'">
+      <span class="flex items-center justify-start text-left w-full">{{ data.title }}</span>
+    </div>
+  </a>
+</div>

@@ -1,0 +1,16 @@
+<app-banner-intro [title]="title" [imgSrc]="imgSrc" class="w-full"></app-banner-intro>
+<div class="mx-5">
+  <app-breadcrumb-home [breadcrumb]="breadcrumbObj"></app-breadcrumb-home>
+  <div nz-row>
+    <div nz-col nzLg="18" nzSpan=24>
+      <div>
+        <app-danh-sach-tt-sk-tb [listData]="tinTucs"></app-danh-sach-tt-sk-tb>
+      </div>
+      <app-pagination-page [totalItems]="200" [limit]="10" [currentPage]="1"
+        class="w-full flex justify-center py-10 md:pb-40 "></app-pagination-page>
+    </div>
+    <div nz-col nzLg="6" nzSpan="24" class="md:pl-5 pb-20">
+      <app-side-menu-page [panels]="panels"></app-side-menu-page>
+    </div>
+  </div>
+</div>

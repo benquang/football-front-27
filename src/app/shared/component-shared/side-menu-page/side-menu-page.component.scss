@@ -1,0 +1,31 @@
+::ng-deep .ant-collapse-item {
+  @apply border-solid border-b border-x-0 border-t-0 border-grey4 bg-white;
+}
+::ng-deep .ant-collapse-header {
+  @apply text-subtitle font-medium;
+}
+::ng-deep .ant-collapse-content-box {
+  @apply p-0 #{!important};
+}
+nz-collapse nz-collapse-panel:first-child {
+  @apply rounded-tl-xl rounded-tr-xl;
+}
+nz-collapse nz-collapse-panel:last-child {
+  @apply rounded-bl-xl rounded-br-xl;
+}
+nz-collapse
+  nz-collapse-panel:last-child
+  ::ng-deep
+  .ant-collapse-content:last-child {
+  @apply rounded-bl-xl rounded-br-xl;
+}
+nz-collapse nz-collapse-panel:last-child ::ng-deep .panel-content:last-child {
+  @apply rounded-bl-xl rounded-br-xl;
+}
+.panel-content {
+  @apply w-full pl-6 pr-4 py-4 text-blue3 bg-grey8 cursor-pointer;
+}
+
+.ant-collapse-arrow-hidden ::ng-deep .ant-collapse-arrow {
+  @apply hidden #{!important};
+}

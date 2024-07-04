@@ -1,0 +1,7 @@
+nz-breadcrumb {
+  @apply tracking-tighter overflow-hidden h-6 ml-0 top-[60px];
+}
+::ng-deep .ant-breadcrumb-separator,
+nz-breadcrumb-item * :not(i) {
+  @apply text-grey font-light;
+}

@@ -1,0 +1,37 @@
+<swiper-container init="false" #swiperWhyUs>
+  <swiper-slide *ngFor="let post of listPostTaiSaoChon" class="pl-6 pr-6">
+    <div nz-row>
+      <div nz-col nzSpan="24">
+        <img class="w-full" src="assets/img/bg/default-cover.jpg"
+          onerror="this.src='assets/img/bg/default-cover.jpg'">
+      </div>
+    </div>
+    <div nz-row class="p-4 bg-white rounded-b-2xl">
+      <div nz-col nzSpan="24" class="mb-3 relative">
+        <span class="text-grey4 flex items-baseline">
+          <i class="fa-solid fa-calendar-days mr-1"></i>
+          20:00 01/01/2023
+        </span>
+      </div>
+      <div nz-col nzSpan="24" class="mb-2 overflow-ellipsis h-[64px] overflow-hidden text-justify">
+        <span class="w-full text-title4 font-medium">
+          {{post}} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id dolor non
+          dui sollicitudin
+          tempor at
+          at
+          erat.
+          Suspendisse ut turpis nunc. Mauris sit amet sodales est, vel imperdiet purus.
+        </span>
+      </div>
+      <div nz-col nzSpan="24" class="overflow-ellipsis h-[80px] overflow-hidden text-justify">
+        <span class="w-full text-subtitle">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id dolor non dui
+          sollicitudin tempor at
+          at
+          erat.
+          Suspendisse ut turpis nunc. Mauris sit amet sodales est, vel imperdiet purus.
+        </span>
+      </div>
+    </div>
+  </swiper-slide>
+</swiper-container>

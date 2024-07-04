@@ -1,0 +1,84 @@
+<div id="sj-content" class="sj-content sj-addarticleholdcontent sj-addarticleholdvtwo">
+  <div class="sj-dashboardboxtitle sj-titlewithform">
+    <h2 class="w-full text-center">{{langData.DANG_KY}}</h2>
+    <!-- Toolbar here -->
+  </div>
+  <div class="login-on-page">
+    <form nz-form [formGroup]="form" class="center-form">
+      <nz-form-item>
+        <nz-form-control [nzValidateStatus]="displayFieldCssZorro(form, 'email')">
+          <nz-input-group [nzPrefix]="userIcon" [nzTooltipTitle]="langData.EMAIL" nzTooltipPlacement="left" nz-tooltip>
+            <input type="text" class="nz-form-input" nz-input formControlName="email" nzSize="large"
+              [attr.placeholder]="langData.EMAIL" />
+            <ng-template #userIcon>
+              <i class="fa-solid fa-user prefix-icon"></i>
+            </ng-template>
+          </nz-input-group>
+          <app-field-error-display [displayError]="isFieldValid(form, 'email', 'required')"
+            [errorMsg]="langData.CHUA_NHAP_TEN_DANG_NHAP">
+          </app-field-error-display>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control [nzValidateStatus]="displayFieldCssZorro(form, 'password')">
+          <nz-input-group [nzPrefix]="passIcon" [nzSuffix]="showPassButtonLogin" [nzTooltipTitle]="langData.MAT_KHAU"
+            nzTooltipPlacement="left" nz-tooltip>
+            <input [attr.type]="showPass ? 'text' : 'password'" class="nz-form-input" nz-input
+              formControlName="password" [attr.placeholder]="langData.MAT_KHAU" nzSize="large" />
+            <ng-template #passIcon>
+              <i class="fa-solid fa-lock prefix-icon"></i>
+            </ng-template>
+            <ng-template #showPassButtonLogin>
+              <i (click)="toggleShowPassLogin()"
+                [ngClass]="showPass ? 'fa-solid fa-eye-slash append-icon cursor-pointer' : 'fa-solid fa-eye append-icon cursor-pointer'"></i>
+            </ng-template>
+          </nz-input-group>
+          <app-field-error-display [displayError]="isFieldValid(form, 'password', 'required')"
+            [errorMsg]="langData.CHUA_NHAP_MAT_KHAU">
+          </app-field-error-display>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control [nzValidateStatus]="displayFieldCssZorro(form, 'repassword')">
+          <nz-input-group [nzPrefix]="passIcon" [nzSuffix]="showPassButtonLogin"
+            [nzTooltipTitle]="langData.NHAP_LAI_MAT_KHAU" nzTooltipPlacement="left" nz-tooltip>
+            <input [attr.type]="showPass ? 'text' : 'password'" class="nz-form-input" nz-input
+              formControlName="repassword" [attr.placeholder]="langData.NHAP_LAI_MAT_KHAU" nzSize="large" />
+          </nz-input-group>
+          <app-field-error-display [displayError]="isFieldValid(form, 'repassword', 'required')"
+            [errorMsg]="langData.CHUA_NHAP_MAT_KHAU">
+          </app-field-error-display>
+          <app-field-error-display [displayError]="isFieldValid(form, 'repassword', 'mustMatch')"
+            [errorMsg]="langData.MAT_KHAU_CHUA_KHOP">
+          </app-field-error-display>
+        </nz-form-control>
+      </nz-form-item>
+      <div nz-row>
+        <div nz-col [nzSpan]="12"></div>
+        <div class="text-right" nz-col [nzSpan]="12">
+          <a href="javascript:void(0)" [routerLink]="[urlConst.ROUTE.AUTH.LOGIN]">{{
+            langData.DA_CO_TAI_KHOAN}}</a>
+          <!-- <a (click)="isShowFogotPass=true">{{ langData.QUEN_MAT_KHAU}}</a> -->
+        </div>
+      </div>
+      <div nz-row nzJustify="center" class="mt-5x2">
+        <div nz-col [nzSpan]="24" class="text-center">
+          <button nz-button type="button" class="cursor-pointer" [nzType]="'primary'" nzSize="large"
+            (click)="onRegister()">
+            <span>{{ langData.DANG_KY}}</span></button>
+        </div>
+      </div>
+      <div nz-row nzJustify="center">
+        <nz-divider nzDashed [nzText]="text">
+          <ng-template #text><span>{{langData.HOAC}}</span></ng-template>
+        </nz-divider>
+        <div nz-col [nzSpan]="24" class="text-center">
+          <button class="nz-btn-red mt-5x2" nz-button nzSize="large" (click)="onLoginWithGoogle()" type="button">
+            <i class="fa-brands fa-google mr-5x2"></i>
+            <span>{{ langData.DANG_NHAP_GOOGLE}}</span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

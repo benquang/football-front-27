@@ -1,0 +1,19 @@
+::ng-deep .ant-pagination-item {
+  @apply border rounded-full border-solid border-white;
+}
+::ng-deep .ant-pagination-prev .ant-pagination-item-link,
+::ng-deep .ant-pagination-next .ant-pagination-item-link {
+  @apply border rounded-full border-solid border-white;
+}
+::ng-deep .ant-pagination-item-active {
+  @apply bg-primary;
+}
+::ng-deep .ant-pagination-item a {
+  @apply leading-[inherit];
+}
+::ng-deep .ant-pagination-item-active a {
+  @apply text-grey9;
+}
+::ng-deep .ant-pagination-item-container {
+  @apply translate-y-[35%];
+}

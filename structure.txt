@@ -1,0 +1,70 @@
+src
+├─ app
+│  ├─ auth (Module)
+│  │  ├─ login (Component)
+│  │  ├─ register (Component)
+│  │  └─ ...
+│  │
+│  ├─ core (Module)
+│  │  ├─ constants (Files)
+│  │  ├─ guards (Files)
+│  │  ├─ interceptors (Files)
+│  │  ├─ validators (Files)
+│  │  ├─ models
+│  │  │  ├─ common (Files)
+│  │  │  ├─ main (Files)
+│  │  │  ├─ management (Files)
+│  │  │  └─ ...
+│  │  ├─ services
+│  │  │  ├─ auth (Files)
+│  │  │  ├─ common (Files)
+│  │  │  ├─ main (Files)
+│  │  │  ├─ management (Files)
+│  │  │  └─ ...
+│  │  └─ ...
+│  │
+│  ├─ layouts
+│  │  ├─ main (Module)
+│  │  │  ├─ main-footer (Component)
+│  │  │  ├─ main-header (Component)
+│  │  │  └─ main-layout (Component)
+│  │  ├─ management (Module)
+│  │  │  ├─ management-footer (Component)
+│  │  │  ├─ management-header (Component)
+│  │  │  ├─ management-layout (Component)
+│  │  │  └─ management-sidebar (Component)
+│  │  └─ ...
+│  │
+│  ├─ main (Module)
+│  │  ├─ homepage (Component / Module of Components)
+│  │  ├─ my-info (Component / Module of Components)
+│  │  └─ ...
+│  │
+│  ├─ management (Module)
+│  │  ├─ dashboard (Component / Module of Components)
+│  │  ├─ categories (Module)
+│  │  │  ├─ academic-ranks (Module)
+│  │  │  │  ├─ list-academic-ranks (Component)
+│  │  │  │  └─ form-academic-ranks (Component)
+│  │  │  └─ ...
+│  │  └─ ...
+│  │
+│  ├─ shared
+│  │  ├─ component-shared
+│  │  │  ├─ view-file (Standalone Component)
+│  │  │  └─ ...
+│  │  └─ widget
+│  │     ├─ directives (Folder of Standalone Components)
+│  │     ├─ pipes (Folder of Standalone Components)
+│  │     └─ ...
+│  └─ ...
+│
+├─ assets
+│  ├─ css
+│  ├─ img
+│  ├─ libs
+│  ├─ fonts
+│  ├─ files
+│  ├─ pdfs
+│  └─ languages
+└─ environments

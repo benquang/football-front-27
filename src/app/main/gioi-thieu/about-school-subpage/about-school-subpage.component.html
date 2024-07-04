@@ -1,0 +1,31 @@
+<div class="py-5x2">
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <app-breadcrumb-home [breadcrumb]="breadcrumbObj"></app-breadcrumb-home>
+    </div>
+  </div>
+  <div nz-row nzGutter="24" class="mt-5x2">
+    <div nz-col nzSpan="24" nzMd="16">
+      <span class="text-title3 text-primary font-bold uppercase">
+        {{breadcrumbObj.heading}}
+      </span>
+      <ul class="m-0 pt-5x4 border-solid border-gray border-b border-x-0 border-t-0">
+        <ng-container *ngFor="let item of dataMenu">
+          <a *ngIf="item.url.startsWith('http')" [href]="item.url">
+            <li class="uppercase mb-5x3">
+              {{ item.name }}
+            </li>
+          </a>
+          <a *ngIf="!item.url.startsWith('http')" [routerLink]="item.url">
+            <li class="uppercase mb-5x3">
+              {{ item.name }}
+            </li>
+          </a>
+        </ng-container>
+      </ul>
+    </div>
+    <div nz-col nzSpan="24" nzMd="8">
+      <app-side-menu-page [panels]="panels"></app-side-menu-page>
+    </div>
+  </div>
+</div>

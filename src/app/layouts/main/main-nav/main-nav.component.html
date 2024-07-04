@@ -1,0 +1,35 @@
+<div class="w-full">
+  <!--<app-navbar-home-slider></app-navbar-home-slider>-->
+
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+
+  <div class="xs:hidden xl:block">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <div [ngClass]="{'topnav': true, 'responsive': isResponsive}" id="myTopnav">
+      <a [href]="returnHome()" class="active">Home</a>
+      <a [href]="returnLichthidau('Premier League')">Lịch thi đấu</a>
+      <a [href]="returnKetqua('Premier League')">Kết quả</a>
+      <a [href]="returnLeagues()">Leagues</a>
+      <a href="javascript:void(0);" class="icon" (click)="toggleResponsive()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="xs:block xl:hidden">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <div [ngClass]="{'topnav1': true, 'responsive': isResponsive}" id="myTopnav">
+      <a [href]="returnHome()" class="active">Home</a>
+      <a [href]="returnLichthidau('Premier League')">Lịch thi đấu</a>
+      <a [href]="returnKetqua('Premier League')">Kết quả</a>
+      <a [href]="returnLeagues()">Leagues</a>
+      <a href="javascript:void(0);" class="icon" (click)="toggleResponsive()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+
+
+</div>

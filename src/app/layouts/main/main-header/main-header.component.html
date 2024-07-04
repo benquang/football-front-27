@@ -1,0 +1,190 @@
+<!-- <div
+  class="w-full h-[70px] lg:h-[100px] bg-white pl-5x3 lg:pl-[125px] lg:pr-[125px] z-0 absolute top-[25px] left-0">
+  <a href="http://localhost:4200/">
+    <img src="assets/img/logo/sport4.JPG"
+      class="h-auto max-h-[70px] lg:max-h-[100px] sm:py-5x1 max-w-[min(466px,55%)] absolute top-1/2 -translate-y-1/2">
+  </a>
+</div>
+<div
+  class="w-[calc(100vw-min(450px,35%))] left-[min(450px,35%)] lg:w-[calc(100vw-max(450px,50%))] lg:left-[max(450px,50%)] h-[120px] lg:h-[150px] absolute top-0 z-20 [clip-path:polygon(0_0,40px_50px,35%_50px,60%_100%,100%_100%,100%_0)] lg:[clip-path:polygon(0_0,200px_100%,100%_100%,100%_0)]">
+   Line 1 right 
+
+ Line 2 right 
+  <div
+    class="w-full h-[70px] lg:h-[100px] pr-5x3 lg:pr-[125px] z-0 absolute top-[50px] left-0 text-right">
+    <div class="hidden lg:block">
+      <nz-input-group [nzSuffix]="suffixIconSearch" nzSize="large"
+        class="w-full max-w-[min(400px,45%)] rounded-full absolute right-[125px] top-1/2 -translate-y-1/2">
+        <input class="search-box" type="text" nz-input placeholder="Tìm kiếm" />
+      </nz-input-group>
+      <ng-template #suffixIconSearch>
+        <span class="text-gray-dark mr-5x1">|</span>
+        <i class="fa-solid fa-magnifying-glass text-gray-dark cursor-pointer text-action1"
+          (click)="search()"></i>
+      </ng-template>
+    </div>
+    <div class="hidden sm:max-lg:block">
+      <i class="fa-solid fa-magnifying-glass cursor-pointer absolute right-[15%] top-1/2 -translate-y-1/2 text-white text-title2"
+        nz-popover nzPopoverPlacement="bottomRight" [nzPopoverContent]="searchTpl"
+        nzPopoverTrigger="click">
+      </i>
+    </div>
+    <div class="sm:hidden" (click)="isMobileMenuOpen=!isMobileMenuOpen">
+      <i class="fa-solid fa-bars cursor-pointer absolute right-[15%] top-1/2 -translate-y-1/2 text-white text-title2"
+        [ngClass]="{ 'hidden': isMobileMenuOpen }"></i>
+      <i class="fa-solid fa-times cursor-pointer absolute right-[15%] top-1/2 -translate-y-1/2 text-white text-title2"
+        [ngClass]="{ 'hidden': !isMobileMenuOpen }"></i>
+    </div>
+  </div>
+</div>
+
+<ng-template #searchTpl>
+  <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+    <input type="text" nz-input placeholder="Tìm kiếm" />
+  </nz-input-group>
+  <ng-template #suffixIconButton>
+    <button nz-button nzType="primary" nzSearch>
+      <i class="fa-solid fa-magnifying-glass text-gray-dark cursor-pointer" (click)="search()"></i>
+    </button>
+  </ng-template>
+</ng-template>
+
+<ng-template #selectLanguageTpl>
+  <div nz-row class="w-40">
+    <div nz-col nzSpan="24" class="p-2 text-center cursor-pointer bg-white hover:bg-grey7">
+      <img class="w-6 float-left" src="assets/img/lang/vi.svg">
+      Việt Nam
+    </div>
+    <div nz-col nzSpan="24">
+      <hr class="m-0">
+    </div>
+    <div nz-col nzSpan="24" class="p-2 text-center cursor-pointer bg-white hover:bg-grey7">
+      <img class="w-6 float-left" src="assets/img/lang/en.svg">
+      English
+    </div>
+  </div>
+</ng-template>
+
+<div class="dropdown-menu" [class.show]="isMobileMenuOpen">
+  <a class="px-3 py-3 text-grey4 flex justify-between items-center" href="javascript:void(0)"
+    [routerLink]="urlConst.ROUTE.MAIN.GIOI_THIEU.BASE">
+    <span>{{langData.GIOI_THIEU}}</span>
+    <i class="fa-solid fa-angle-right ml-auto"></i>
+  </a>
+  <a class="px-3 py-3 text-grey4 flex justify-between items-center" href="javascript:void(0)"
+    [routerLink]="urlConst.ROUTE.MAIN.DAO_TAO.BASE">
+    <span>{{langData.DAO_TAO}}</span>
+    <i class="fa-solid fa-angle-right ml-auto" [ngClass]="{ 'hidden': isMobileSubMenuOpen }"
+      (click)="isMobileSubMenuOpen=!isMobileSubMenuOpen"></i>
+    <i class="fa-solid fa-angle-down ml-auto" [ngClass]="{ 'hidden': !isMobileSubMenuOpen }"
+      (click)="isMobileSubMenuOpen=!isMobileSubMenuOpen"></i>
+  </a>
+  <a *ngIf="isMobileSubMenuOpen" class="px-3 py-3 text-grey4 flex justify-between items-center"
+    href="javascript:void(0)" [routerLink]="urlConst.ROUTE.MAIN.DAO_TAO.QTE_DU_HOC">
+    <span class="ml-4">{{langData.DT_QUOC_TE_DU_HOC}}</span>
+    <i class="fa-solid fa-angle-right ml-auto"></i>
+  </a>
+  <a *ngIf="isMobileSubMenuOpen" class="px-3 py-3 text-grey4 flex justify-between items-center"
+    href="javascript:void(0)" [routerLink]="urlConst.ROUTE.MAIN.DAO_TAO.CHINH_QUY_CLC">
+    <span class="ml-4">{{langData.DT_CHAT_LUONG_CAO}}</span>
+    <i class="fa-solid fa-angle-right ml-auto"></i>
+  </a>
+  <a *ngIf="isMobileSubMenuOpen" class="px-3 py-3 text-grey4 flex justify-between items-center"
+    href="javascript:void(0)" [routerLink]="urlConst.ROUTE.MAIN.DAO_TAO.VLVH">
+    <span class="ml-4">{{langData.DT_VUA_HOC_VUA_LAM}}</span>
+    <i class="fa-solid fa-angle-right ml-auto"></i>
+  </a>
+  <a *ngIf="isMobileSubMenuOpen" class="px-3 py-3 text-grey4 flex justify-between items-center"
+    href="javascript:void(0)" [routerLink]="urlConst.ROUTE.MAIN.DAO_TAO.THS">
+    <span class="ml-4">{{langData.DT_THAC_SI}}</span>
+    <i class="fa-solid fa-angle-right ml-auto"></i>
+  </a>
+  <a *ngIf="isMobileSubMenuOpen" class="px-3 py-3 text-grey4 flex justify-between items-center"
+    href="javascript:void(0)" [routerLink]="urlConst.ROUTE.MAIN.DAO_TAO.TS">
+    <span class="ml-4">{{langData.DT_THAC_SI}}</span>
+    <i class="fa-solid fa-angle-right ml-auto"></i>
+  </a>
+
+  <a class="px-3 py-3 text-grey4 flex justify-between items-center" href="javascript:void(0)"
+    [routerLink]="urlConst.ROUTE.MAIN.NCKH.BASE">
+    <span>{{langData.NGHIEN_CUU_KHOA_HOC}}</span>
+    <i class="fa-solid fa-angle-right ml-auto"></i>
+  </a>
+  <a class="px-3 py-3 text-grey4 flex justify-between items-center" href="javascript:void(0)"
+    [routerLink]="urlConst.ROUTE.MAIN.QH_DN.BASE">
+    <span>{{langData.QUAN_HE_DOANH_NGHIEP}}</span>
+    <i class="fa-solid fa-angle-right ml-auto"></i>
+  </a>
+  <a class="px-3 py-3 text-grey4 flex justify-between items-center" href="javascript:void(0)"
+    [routerLink]="urlConst.ROUTE.MAIN.CBVC.BASE">
+    <span>{{langData.CAN_BO_VIEN_CHUC}}</span>
+    <i class="fa-solid fa-angle-right ml-auto"></i>
+  </a>
+  <a class="px-3 py-3 text-grey4 flex justify-between items-center" href="javascript:void(0)"
+    [routerLink]="urlConst.ROUTE.MAIN.TIN_TUC_SU_KIEN.BASE">
+    <span>{{langData.TIN_TUC}}</span>
+    <i class="fa-solid fa-angle-right ml-auto"></i>
+  </a>
+  <a class="px-3 py-3 text-grey4 flex justify-between items-center" href="javascript:void(0)"
+    [routerLink]="urlConst.ROUTE.MAIN.THONG_BAO.BASE">
+    <span>{{langData.THONG_BAO}}</span>
+    <i class="fa-solid fa-angle-right ml-auto"></i>
+  </a>
+  <a class="px-3 py-3 text-grey4 flex justify-between items-center" href="javascript:void(0)"
+    [routerLink]="urlConst.ROUTE.MAIN.TUYEN_SINH.BASE">
+    <span>{{langData.TUYEN_SINH}}</span>
+    <i class="fa-solid fa-angle-right ml-auto"></i>
+  </a>
+  <a class="px-3 py-3 text-grey4 flex justify-between items-center"
+    [href]="urlConst.EXTERNAL_URL.ONLINE_OFFICE">
+    <span>{{langData.ONLINE_OFFICE}}</span>
+    <i class="fa-solid fa-angle-right ml-auto"></i>
+  </a>
+  <a class="px-3 py-3 text-grey4 flex justify-between items-center"
+    [href]="urlConst.EXTERNAL_URL.SITEMAP">
+    <span>{{langData.SITEMAP}}</span>
+    <i class="fa-solid fa-angle-right ml-auto"></i>
+  </a>
+  <a class="px-3 py-3 text-grey4 flex justify-between items-center" href="javascript:void(0)"
+    [routerLink]="urlConst.ROUTE.MAIN.LIEN_HE.BASE">
+    <span>{{langData.LIEN_HE}}</span>
+    <i class="fa-solid fa-angle-right ml-auto"></i><img src="assets/img/logo/sport6.JPG" class="max-h-[30px]">
+  </a>
+</div>-->
+
+<div class="xs:hidden xl:block pl-[125px] pr-[125px]">
+
+  <div nz-row class="py-6">
+    <div nz-col nzXl="12">
+      <img src="assets/img/logo/sport6.JPG" class="max-h-[27px]">
+    </div>
+    <div nz-col nzXl="12">
+      <div nz-row>
+        <div nz-col nzXl="18">
+          <div class="float-right text-cus1 text-xamdam font-light">Thứ 2</div>
+        </div>
+        <div nz-col nzXl="1" class="flex justify-center">
+          <div class="text-#e5e5e5 text-subtitle font-hairline">|</div>
+        </div>
+        <div nz-col nzXl="4">
+          <div class="text-cus1 text-xamdam font-light">29/04/2024</div>
+        </div>
+        <div nz-col nzXl="1">
+          <div class="float-right text-subtitle font-hairline">|</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+<div class="xs:block xl:hidden pl-[15px] pr-[15px]">
+
+  <div nz-row class="py-6">
+    <div nz-col nzXs="24" class="flex justify-center">
+      <img src="assets/img/logo/sport6.JPG" class="max-h-[17px]">
+    </div>
+  </div>
+  
+</div>

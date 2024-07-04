@@ -1,0 +1,25 @@
+<div class="h-full w-full">
+  <div class="w-full flex" *ngFor="let item of listData">
+    <div class="w-full flex flex-col">
+      <div class="flex basis-full">
+        <img [src]="item.anhBia" class="w-[160px] h-[90px] rounded mb-1 mt-0 mr-5x2"
+          onerror="this.src='assets/img/bg/default-cover.jpg'">
+        <div class="w-full h-[85px]">
+          <nz-tag *ngIf="item.tag" nzColor="blue" class="uppercase mr-5x1">{{item.tag}}</nz-tag>
+          <span class="text-grey4 text-base font-thin">
+            {{ item.ngayDang | date: 'hh:mm dd/MM/yyyy'}}
+          </span>
+          <div class="w-full h-[65px] line-clamp-2 font-bold text-subtitle py-2">
+            {{item.tieuDe}}
+          </div>
+        </div>
+      </div>
+      <div class="line-clamp-2 mb-1 -mt-5x3 h-[60px]">
+        {{ item.noiDung }}
+      </div>
+      <div class="w-full mb-2">
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>

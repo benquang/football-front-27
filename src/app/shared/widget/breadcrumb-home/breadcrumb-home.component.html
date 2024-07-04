@@ -1,0 +1,33 @@
+<nz-breadcrumb [nzSeparator]="iconTemplate" class="mb-10 mt-2">
+
+  <ng-container *ngIf="breadcrumb.listBreadcrumb.length <= 2; else moreThan3Beard">
+    <nz-breadcrumb-item *ngFor="let item of breadcrumb.listBreadcrumb">
+      <a href="javascript:void(0)" [routerLink]="[item.link]">{{item.title}}</a>
+    </nz-breadcrumb-item>
+  </ng-container>
+
+  <ng-template #moreThan3Beard>
+    <!-- PC view -->
+    <nz-breadcrumb-item class="lg:[display:unset] hidden"
+      *ngFor="let item of breadcrumb.listBreadcrumb">
+      <a href="javascript:void(0)" [routerLink]="[item.link]">{{item.title}}</a>
+    </nz-breadcrumb-item>
+    <!-- Mobile view -->
+    <nz-breadcrumb-item class="lg:hidden">
+      <a href="javascript:void(0)"
+        [routerLink]="[breadcrumb.listBreadcrumb[0].link]">{{breadcrumb.listBreadcrumb[0].title}}</a>
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item class="lg:hidden">
+      ...
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item class="lg:hidden">
+      <a href="javascript:void(0)"
+        [routerLink]="[breadcrumb.listBreadcrumb[breadcrumb.listBreadcrumb.length-1].link]">{{breadcrumb.listBreadcrumb[breadcrumb.listBreadcrumb.length-1].title}}</a>
+    </nz-breadcrumb-item>
+  </ng-template>
+
+  <nz-breadcrumb-item>
+    <span class="!text-red">{{breadcrumb.heading}}</span>
+  </nz-breadcrumb-item>
+</nz-breadcrumb>
+<ng-template #iconTemplate><i class="fa-solid fa-angle-right"></i></ng-template>

@@ -1,0 +1,25 @@
+<div
+  class="w-full relative justify-evenly bg-gray inline-flex flex-wrap bg-[url('assets/img/bg/art-ev-dn.svg')] lg:bg-cover bg-contain">
+  <div class="w-full relative align-top flex justify-center text-center mt-10">
+    <span class="text-red text-title2 font-bold w-full">
+      Sự Kiện</span>
+  </div>
+  <div nz-row nzGutter="26" class="mt-10 justify-start items-start inline-flex w-full">
+    <div *ngFor="let item of [1,2,3,4]; index as i" nz-col class="w-full mb-5x2" nzSpan="24"
+      nzMd="12" [nzLg]="i > 2 ? 0 : 8" nzXl="6">
+      <app-card-event></app-card-event>
+    </div>
+  </div>
+  <div
+    class="relative border inline-flex p-3 rounded-full border-blue border-solid bg-white hover:bg-blue mt-5x6 h-full hover:text-gray text-blue transition">
+    <span class="text-title3 font-bold w-full inline mx-20">
+      Xem thêm</span>
+  </div>
+  <div class="w-full relative align-top flex justify-center text-center mt-10">
+    <span class="text-red text-title2 font-bold w-full">
+      Doanh nghiệp liên kết với HCMUTE</span>
+  </div>
+  <div class="w-full mt-9 mb-8">
+    <app-slide-card-business-logo></app-slide-card-business-logo>
+  </div>
+</div>
